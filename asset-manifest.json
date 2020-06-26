@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.4e708ecf.chunk.css",
-    "main.js": "/static/js/main.3e03508a.chunk.js",
-    "main.js.map": "/static/js/main.3e03508a.chunk.js.map",
+    "main.css": "/static/css/main.b2c16edf.chunk.css",
+    "main.js": "/static/js/main.73b4276d.chunk.js",
+    "main.js.map": "/static/js/main.73b4276d.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.0a685e3a.js",
     "runtime-main.js.map": "/static/js/runtime-main.0a685e3a.js.map",
     "static/js/2.c38a1535.chunk.js": "/static/js/2.c38a1535.chunk.js",
@@ -14,24 +14,26 @@
     "static/js/4.43a78b6d.chunk.js": "/static/js/4.43a78b6d.chunk.js",
     "static/js/4.43a78b6d.chunk.js.map": "/static/js/4.43a78b6d.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.3d2b9d7b9307b8544f8835bb114c9447.js": "/precache-manifest.3d2b9d7b9307b8544f8835bb114c9447.js",
+    "precache-manifest.4e82f67b3db6f0dca5627c34f637a131.js": "/precache-manifest.4e82f67b3db6f0dca5627c34f637a131.js",
     "service-worker.js": "/service-worker.js",
     "static/css/3.cffc9e54.chunk.css.map": "/static/css/3.cffc9e54.chunk.css.map",
     "static/css/4.54df59d4.chunk.css.map": "/static/css/4.54df59d4.chunk.css.map",
-    "static/css/main.4e708ecf.chunk.css.map": "/static/css/main.4e708ecf.chunk.css.map",
+    "static/css/main.b2c16edf.chunk.css.map": "/static/css/main.b2c16edf.chunk.css.map",
     "static/media/index.css": "/static/media/Montserrat-Regular.ee653992.ttf",
-    "static/media/airbnbLogo.jpg": "/static/media/airbnbLogo.e47c3e26.jpg",
     "static/media/contactMail.png": "/static/media/contactMail.d6d4086f.png",
-    "static/media/developerActivity.svg": "/static/media/developerActivity.59389695.svg",
+    "static/media/eeizo.png": "/static/media/eeizo.6ded58d5.png",
+    "static/media/fluttercasa.png": "/static/media/fluttercasa.7fcd0d3b.png",
+    "static/media/gtek-logo.png": "/static/media/gtek-logo.c8024a2d.png",
     "static/media/logo.svg": "/static/media/logo.25bf045c.svg",
-    "static/media/manOnTable.svg": "/static/media/manOnTable.52be3144.svg",
+    "static/media/programmingsvg.svg": "/static/media/programmingsvg.08f1dc0e.svg",
+    "static/media/progressive_app_m9ms.svg": "/static/media/progressive_app_m9ms.685503ec.svg",
     "static/media/skill.svg": "/static/media/skill.34409398.svg",
     "static/media/TalkCard.css": "/static/media/talksCardBack.0288c5ec.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.0a685e3a.js",
     "static/js/2.c38a1535.chunk.js",
-    "static/css/main.4e708ecf.chunk.css",
-    "static/js/main.3e03508a.chunk.js"
+    "static/css/main.b2c16edf.chunk.css",
+    "static/js/main.73b4276d.chunk.js"
   ]
 }
