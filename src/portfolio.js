@@ -26,7 +26,7 @@ const greeting = {
     "A passionate Software Developer, who currently loves to build mobile apps using Flutter,with 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Django / Android Kotlin / Dart / Flutter and Firebase."
   ),
   resumeLink:
-    "https://drive.google.com/file/d/1RQjZwdIptXf08-y0_EXM8lIUTKccID5l/view?usp=sharing", // Set to empty to hide the button
+    "https://drive.google.com/file/d/1ksQrY3c0V51GlBWtX4k28gKEGRq3h4-p/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
