@@ -23,10 +23,10 @@ const greeting = {
   username: "Javeed Ishaq",
   title: "Hi all, I'm Javeed Ishaq",
   subTitle: emoji(
-    "A passionate Software Developer, who currently loves to build mobile apps using Flutter,with 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / Django / Android Kotlin / Dart / Flutter and Firebase."
+    "A passionate Software Developer, who currently loves to build mobile apps using Flutter,with 🚀 having an experience of building Web and Mobile applications with JavaScript / Reactjs / NextJs / SpringBoot / Android Kotlin / Dart / Flutter and Firebase."
   ),
   resumeLink:
-    "https://drive.google.com/file/d/1ksQrY3c0V51GlBWtX4k28gKEGRq3h4-p/view?usp=sharing", // Set to empty to hide the button
+    "https://drive.google.com/file/d/1A11ZlefUBhXmtFtBTXIYKm67meE__GNM/view?usp=sharing", // Set to empty to hide the button
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
@@ -188,9 +188,9 @@ const workExperiences = {
       ]
     },
     {
-      role: "Reactjs Nodejs Flutter Developer",
+      role: "Full Stack Engineer",
       company: "Gtek.Solutions",
-      companylogo: require("./assets/images/gtek-logo.png"),
+      companylogo: require("./assets/images/gtek-logo-latest.jpeg"),
       date: "Nov 2018 – Mar 2020",
       desc: "FullStack Web and Mobile Apps Developer",
       descBullets: [
@@ -203,12 +203,13 @@ const workExperiences = {
       ]
     },
     {
-      role: "Mobile Apps Architect for Android, iOS, Flutter, Firebase",
-      company: "FlutterCasa",
-      companylogo: require("./assets/images/fluttercasa.png"),
-      date: "Apr 2020 – Present",
-      desc: "Flutter iOS/Android Apps Developer",
+      role: "Senior Apps Developer",
+      company: "Crunch Africa",
+      companylogo: require("./assets/images/crunch-africa.jpg"),
+      date: "April 2020 – Present",
+      desc: "Android, Flutter and Spring Boot  Developer",
       descBullets: [
+        "Backend Api Development using SpringBoot/MySQL",
         "Architect and Engineer full Development life cycle of Mobile App",
         "Ensuring quality and performance of application to specifications",
         "Identifying potential problems and resolving application bottlenecks",
