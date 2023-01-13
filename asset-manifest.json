@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.c3ecf535.chunk.css",
-    "main.js": "/static/js/main.9a5f20d1.chunk.js",
-    "main.js.map": "/static/js/main.9a5f20d1.chunk.js.map",
+    "main.js": "/static/js/main.313a2543.chunk.js",
+    "main.js.map": "/static/js/main.313a2543.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.9b56a5dd.js",
     "runtime-main.js.map": "/static/js/runtime-main.9b56a5dd.js.map",
     "static/js/2.e9015db5.chunk.js": "/static/js/2.e9015db5.chunk.js",
@@ -14,7 +14,7 @@
     "static/js/4.49c75305.chunk.js": "/static/js/4.49c75305.chunk.js",
     "static/js/4.49c75305.chunk.js.map": "/static/js/4.49c75305.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.4dc3d3f6d6270fc2e36da3dafbd87431.js": "/precache-manifest.4dc3d3f6d6270fc2e36da3dafbd87431.js",
+    "precache-manifest.321daef4ae2ea95e234d2400e70545b5.js": "/precache-manifest.321daef4ae2ea95e234d2400e70545b5.js",
     "service-worker.js": "/service-worker.js",
     "static/css/3.df879eac.chunk.css.map": "/static/css/3.df879eac.chunk.css.map",
     "static/css/4.e91a4b36.chunk.css.map": "/static/css/4.e91a4b36.chunk.css.map",
@@ -25,11 +25,10 @@
     "static/media/abcd.png": "/static/media/abcd.913adece.png",
     "static/media/contactMailDark.svg": "/static/media/contactMailDark.51cf7192.svg",
     "static/media/coursera.svg": "/static/media/coursera.208aa412.svg",
+    "static/media/crunch-africa.jpg": "/static/media/crunch-africa.23461807.jpg",
     "static/media/daily-expense-manager.png": "/static/media/daily-expense-manager.48fd3e1f.png",
     "static/media/developerActivity.svg": "/static/media/developerActivity.59389695.svg",
     "static/media/eeizo.png": "/static/media/eeizo.6ded58d5.png",
-    "static/media/fluttercasa.png": "/static/media/fluttercasa.7fcd0d3b.png",
-    "static/media/gtek-logo.png": "/static/media/gtek-logo.c8024a2d.png",
     "static/media/harvardLogo.png": "/static/media/harvardLogo.35ef5e91.png",
     "static/media/manOnTable.svg": "/static/media/manOnTable.52be3144.svg",
     "static/media/skill.svg": "/static/media/skill.34409398.svg",
@@ -40,6 +39,6 @@
     "static/js/runtime-main.9b56a5dd.js",
     "static/js/2.e9015db5.chunk.js",
     "static/css/main.c3ecf535.chunk.css",
-    "static/js/main.9a5f20d1.chunk.js"
+    "static/js/main.313a2543.chunk.js"
   ]
 }

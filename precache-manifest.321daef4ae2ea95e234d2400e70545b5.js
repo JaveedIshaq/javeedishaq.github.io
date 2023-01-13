@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6c4014aaa3a06610016c43a2a43314b5",
+    "revision": "dbdcbfabd63773c929dde34581754bf5",
     "url": "/index.html"
   },
   {
@@ -12,7 +12,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/4.e91a4b36.chunk.css"
   },
   {
-    "revision": "02ea283fe7f6b4fd4187",
+    "revision": "c7072e8fea720df5395e",
     "url": "/static/css/main.c3ecf535.chunk.css"
   },
   {
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/4.49c75305.chunk.js"
   },
   {
-    "revision": "02ea283fe7f6b4fd4187",
-    "url": "/static/js/main.9a5f20d1.chunk.js"
+    "revision": "c7072e8fea720df5395e",
+    "url": "/static/js/main.313a2543.chunk.js"
   },
   {
     "revision": "2123af63a37770dd8e57",
@@ -64,6 +64,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/coursera.208aa412.svg"
   },
   {
+    "revision": "234618079fc21061674fa7c61f90d7b4",
+    "url": "/static/media/crunch-africa.23461807.jpg"
+  },
+  {
     "revision": "48fd3e1f087a45ce5d213af7a2a3b06d",
     "url": "/static/media/daily-expense-manager.48fd3e1f.png"
   },
@@ -74,14 +78,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "6ded58d5ffbc1b36c5b10f3e738d4b05",
     "url": "/static/media/eeizo.6ded58d5.png"
-  },
-  {
-    "revision": "7fcd0d3b5399dc7ab495882902574a9e",
-    "url": "/static/media/fluttercasa.7fcd0d3b.png"
-  },
-  {
-    "revision": "c8024a2d368e2030aaf3661ea8385726",
-    "url": "/static/media/gtek-logo.c8024a2d.png"
   },
   {
     "revision": "35ef5e915631be2c31ccdff55b53db29",
