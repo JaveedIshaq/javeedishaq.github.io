@@ -1,0 +1,35 @@
+export const siteConfig = {
+  name: "Javeed Ishaq - Solo Product Engineer",
+  authorName: "Javeed Ishaq",
+  username: "javeedishaq",
+  description:
+    "Javeed Ishaq — Solo Product Engineer. I ship complete AI-integrated products — mobile, web, and backend — in weeks, not months. Flutter · Next.js · NestJS · PostgreSQL · AI.",
+  url: "https://javeedishaq.com",
+  links: {
+    twitter: "https://x.com/javeedishaq",
+    github: "https://github.com/javeedishaq",
+    linkedin: "https://linkedin.com/in/javeedishaq",
+    calendly: "https://calendly.com/javeedishaq",
+  },
+  ogImage:
+    "https://res.cloudinary.com/dvt5vkfwz/image/upload/v1767384721/javeed_portfolio_og_image.png",
+  iconIco: "/favicon.ico",
+  logoIcon: "/favicon.ico",
+  keywords: [
+    "Javeed Ishaq",
+    "Solo Product Engineer",
+    "Flutter Developer",
+    "Next.js Developer",
+    "NestJS Developer",
+    "AI Engineer",
+    "Full Stack Developer",
+    "Mobile App Developer",
+    "Web Developer",
+    "PostgreSQL",
+    "Product Engineer",
+    "Software Engineer",
+    "Tech Portfolio",
+    "AI Integration",
+    "Cross Platform Development",
+  ],
+};
