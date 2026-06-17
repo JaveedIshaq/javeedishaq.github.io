@@ -164,7 +164,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   };
 
   return (
-    <ClientPageWrapper>
+    <>
       <Script
         id="schema-blog-post"
         type="application/ld+json"
@@ -175,8 +175,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-
-      <article className="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+      <ClientPageWrapper>
+        <article className="max-w-3xl mx-auto px-4 sm:px-6 py-8">
         {/* Breadcrumb nav (visible, accessible) */}
         <AnimatedText delay={0}>
           <nav aria-label="Breadcrumb" className="mb-6">
@@ -320,5 +320,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </AnimatedSection>
       </article>
     </ClientPageWrapper>
+    </>
   );
 }

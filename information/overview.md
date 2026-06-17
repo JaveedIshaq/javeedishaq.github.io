@@ -1,6 +1,6 @@
 # Portfolio Website Navigation Overview
 
-This document outlines the navigation structure of the portfolio website [https://nbarkiya.xyz/](https://nbarkiya.xyz/), detailing each page and its primary sections to facilitate understanding and interaction.
+This document outlines the navigation structure of the portfolio website [https://javeedishaq.com/](https://javeedishaq.com/), detailing each page and its primary sections to facilitate understanding and interaction.
 
 ---
 
@@ -8,12 +8,12 @@ This document outlines the navigation structure of the portfolio website [https:
 
 The website's main navigation menu is accessible from all pages and includes the following links:
 
-1. **Home**: [https://nbarkiya.xyz/](https://nbarkiya.xyz/)
-2. **Skills**: [https://nbarkiya.xyz/skills](https://nbarkiya.xyz/skills)
-3. **Projects**: [https://nbarkiya.xyz/projects](https://nbarkiya.xyz/projects)
-4. **Experience**: [https://nbarkiya.xyz/experience](https://nbarkiya.xyz/experience)
-5. **Contributions**: [https://nbarkiya.xyz/contributions](https://nbarkiya.xyz/contributions)
-6. **Contact**: [https://nbarkiya.xyz/contact](https://nbarkiya.xyz/contact)
+1. **Home**: [https://javeedishaq.com/](https://javeedishaq.com/)
+2. **Skills**: [https://javeedishaq.com/skills](https://javeedishaq.com/skills)
+3. **Projects**: [https://javeedishaq.com/projects](https://javeedishaq.com/projects)
+4. **Experience**: [https://javeedishaq.com/experience](https://javeedishaq.com/experience)
+5. **Contributions**: [https://javeedishaq.com/contributions](https://javeedishaq.com/contributions)
+6. **Contact**: [https://javeedishaq.com/contact](https://javeedishaq.com/contact)
 
 ---
 
@@ -21,7 +21,7 @@ The website's main navigation menu is accessible from all pages and includes the
 
 ### 1. Home
 
-**URL:** [https://nbarkiya.xyz/](https://nbarkiya.xyz/)
+**URL:** [https://javeedishaq.com/](https://javeedishaq.com/)
 
 **Sections:**
 
@@ -33,7 +33,7 @@ The website's main navigation menu is accessible from all pages and includes the
 
 ### 2. Skills
 
-**URL:** [https://nbarkiya.xyz/skills](https://nbarkiya.xyz/skills)
+**URL:** [https://javeedishaq.com/skills](https://javeedishaq.com/skills)
 
 **Sections:**
 
@@ -41,7 +41,7 @@ The website's main navigation menu is accessible from all pages and includes the
 
 ### 3. Projects
 
-**URL:** [https://nbarkiya.xyz/projects](https://nbarkiya.xyz/projects)
+**URL:** [https://javeedishaq.com/projects](https://javeedishaq.com/projects)
 
 **Sections:**
 
@@ -49,7 +49,7 @@ The website's main navigation menu is accessible from all pages and includes the
 
 ### 4. Experience
 
-**URL:** [https://nbarkiya.xyz/experience](https://nbarkiya.xyz/experience)
+**URL:** [https://javeedishaq.com/experience](https://javeedishaq.com/experience)
 
 **Sections:**
 
@@ -57,7 +57,7 @@ The website's main navigation menu is accessible from all pages and includes the
 
 ### 5. Contributions
 
-**URL:** [https://nbarkiya.xyz/contributions](https://nbarkiya.xyz/contributions)
+**URL:** [https://javeedishaq.com/contributions](https://javeedishaq.com/contributions)
 
 **Sections:**
 
@@ -65,7 +65,7 @@ The website's main navigation menu is accessible from all pages and includes the
 
 ### 6. Contact
 
-**URL:** [https://nbarkiya.xyz/contact](https://nbarkiya.xyz/contact)
+**URL:** [https://javeedishaq.com/contact](https://javeedishaq.com/contact)
 
 **Sections:**
 

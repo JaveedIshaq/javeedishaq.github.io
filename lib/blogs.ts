@@ -37,7 +37,7 @@ export function getAllBlogSlugs(): string[] {
   ensureBlogsDir();
   return fs
     .readdirSync(BLOGS_DIR)
-    .filter((f) => f.endsWith(".md"))
+    .filter((f) => f.endsWith(".md") && f.toLowerCase() !== "readme.md")
     .map((f) => f.replace(/\.md$/, ""));
 }
 

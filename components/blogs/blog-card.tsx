@@ -8,14 +8,21 @@ interface BlogCardProps {
   blog: BlogMeta;
 }
 
+function safeDate(dateStr: string | Date | undefined): Date {
+  if (!dateStr) return new Date();
+  const d = new Date(dateStr);
+  return isNaN(d.getTime()) ? new Date() : d;
+}
+
 export default function BlogCard({ blog }: BlogCardProps) {
-  const formattedDate = new Date(blog.date).toLocaleDateString("en-US", {
+  const date = safeDate(blog.date);
+  const formattedDate = date.toLocaleDateString("en-US", {
     month: "long",
     day: "numeric",
     year: "numeric",
   });
 
-  const isoDate = new Date(blog.date).toISOString();
+  const isoDate = date.toISOString();
 
   return (
     <Link

@@ -8,14 +8,21 @@ interface DevToBlogCardProps {
   article: DevToArticle;
 }
 
+function safeDate(dateStr: string | Date | undefined): Date {
+  if (!dateStr) return new Date();
+  const d = new Date(dateStr);
+  return isNaN(d.getTime()) ? new Date() : d;
+}
+
 export default function DevToBlogCard({ article }: DevToBlogCardProps) {
-  const formattedDate = new Date(article.published_at).toLocaleDateString("en-US", {
+  const date = safeDate(article.published_at);
+  const formattedDate = date.toLocaleDateString("en-US", {
     month: "long",
     day: "numeric",
     year: "numeric",
   });
 
-  const isoDate = new Date(article.published_at).toISOString();
+  const isoDate = date.toISOString();
 
   return (
     <Link
