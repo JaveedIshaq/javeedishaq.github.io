@@ -100,7 +100,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     : siteConfig.ogImage;
 
   // BlogPosting JSON-LD — the single most important schema for article SEO
-  const blogPostSchema = {
+  const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: post.title,
@@ -168,7 +168,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <Script
         id="schema-blog-post"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <Script
         id="schema-breadcrumb-post"

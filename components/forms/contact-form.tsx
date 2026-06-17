@@ -32,8 +32,6 @@ const formSchema = z.object({
 export function ContactForm() {
   const storeModal = useModalStore();
 
-  // const [open, setOpen] = useState(false);
-
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -44,7 +42,6 @@ export function ContactForm() {
     },
   });
 
-  // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
       const response = await fetch("/api/contact", {
@@ -66,7 +63,13 @@ export function ContactForm() {
         });
       }
     } catch (err) {
-      console.log("Err!", err);
+      // Fallback for static sites: open mailto
+      const subject = encodeURIComponent(`Contact from ${values.name}`);
+      const body = encodeURIComponent(
+        `Name: ${values.name}\nEmail: ${values.email}\nSocial: ${values.social || "N/A"}\n\nMessage:\n${values.message}`
+      );
+      window.location.href = `mailto:javeedishaq@gmail.com?subject=${subject}&body=${body}`;
+      console.log("API unavailable, using mailto fallback", err);
     }
   }
 
@@ -85,9 +88,6 @@ export function ContactForm() {
               <FormControl>
                 <Input placeholder="Enter your name" {...field} />
               </FormControl>
-              {/* <FormDescription>
-                                This is your public display name.
-                            </FormDescription> */}
               <FormMessage />
             </FormItem>
           )}
@@ -127,9 +127,6 @@ export function ContactForm() {
               <FormControl>
                 <Input placeholder="Link for social account" {...field} />
               </FormControl>
-              {/* <FormDescription>
-                                This is your public display name.
-                            </FormDescription> */}
               <FormMessage />
             </FormItem>
           )}

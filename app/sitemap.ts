@@ -1,71 +1,26 @@
-import { MetadataRoute } from "next";
-
-import { siteConfig } from "@/config/site";
 import { getAllBlogsMeta } from "@/lib/blogs";
+import { siteConfig } from "@/config/site";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = siteConfig.url;
+export const dynamic = "force-static";
 
-  // Main pages
-  const routes: MetadataRoute.Sitemap = [
-    {
-      url: `${baseUrl}`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/skills`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/projects`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/experience`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/contributions`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/blogs`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/resume`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-  ];
-
-  // Blog post pages — each gets its own sitemap entry with correct date
+export default async function sitemap() {
   const blogs = getAllBlogsMeta();
-  const blogRoutes: MetadataRoute.Sitemap = blogs.map((blog) => ({
-    url: `${baseUrl}/blogs/${blog.slug}`,
+
+  const blogEntries = blogs.map((blog) => ({
+    url: `${siteConfig.url}/blogs/${blog.slug}`,
     lastModified: new Date(blog.date),
-    changeFrequency: "yearly" as const,
-    priority: 0.7,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
   }));
 
-  return [...routes, ...blogRoutes];
+  return [
+    { url: siteConfig.url, lastModified: new Date(), changeFrequency: "daily" as const, priority: 1.0 },
+    { url: `${siteConfig.url}/projects`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.8 },
+    { url: `${siteConfig.url}/experience`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.8 },
+    { url: `${siteConfig.url}/skills`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.7 },
+    { url: `${siteConfig.url}/blogs`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.8 },
+    { url: `${siteConfig.url}/contact`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
+    { url: `${siteConfig.url}/resume`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
+    ...blogEntries,
+  ];
 }

@@ -20,6 +20,12 @@ interface ProjectPageProps {
 
 const githubUsername = "javeedishaq";
 
+export function generateStaticParams() {
+  return Projects.map((project) => ({
+    projectId: project.id,
+  }));
+}
+
 export default async function Project({ params }: ProjectPageProps) {
   const { projectId } = await params;
   let project = Projects.find((val) => val.id === projectId);
@@ -109,7 +115,6 @@ export default async function Project({ params }: ProjectPageProps) {
         <h2 className="inline-block font-heading text-3xl leading-tight lg:text-3xl mb-2">
           Description
         </h2>
-        {/* {<project.descriptionComponent />} */}
         <ProjectDescription
           paragraphs={project.descriptionDetails.paragraphs}
           bullets={project.descriptionDetails.bullets}

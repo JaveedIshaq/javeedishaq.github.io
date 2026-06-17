@@ -6,6 +6,7 @@ export interface contributionsInterface {
 }
 
 export const contributionsUnsorted: contributionsInterface[] = [
+  // Open Source Contributions to Other Projects
   {
     repo: "developer-portfolios",
     contibutionDescription:
@@ -16,37 +17,74 @@ export const contributionsUnsorted: contributionsInterface[] = [
   {
     repo: "curriculum",
     contibutionDescription:
-      "Contributed multiple Ruby on Rails and JavaScript learning projects to The Odin Project's open-source curriculum, helping learners worldwide.",
+      "Contributed multiple Ruby on Rails and JavaScript learning projects to The Odin Project's open-source curriculum, helping learners worldwide with hands-on exercises.",
     repoOwner: "TheOdinProject",
     link: "https://github.com/TheOdinProject/curriculum/pulls?q=author%3AJaveedIshaq+is%3Amerged",
   },
+
+  // My Open Source Projects
   {
-    repo: "30-Days-Of-React",
+    repo: "ng-dev-folio",
     contibutionDescription:
-      "A step-by-step guide to learn React in 30 days. A learning resource I contributed to and forked for the community.",
+      "A modern, responsive Software Developer Portfolio built with Angular and Tailwind CSS. Open-source template with 11+ stars helping developers showcase their work.",
     repoOwner: "JaveedIshaq",
-    link: "https://github.com/JaveedIshaq/30-Days-Of-React",
+    link: "https://github.com/JaveedIshaq/ng-dev-folio",
   },
   {
     repo: "ai-workflow-orchestrator",
     contibutionDescription:
-      "Reusable Claude Code skills and agents for e-commerce, analytics, development, and project-specific workflows. Open-source AI tooling.",
+      "Reusable Claude Code skills and agents for e-commerce, analytics, development, and project-specific workflows. Open-source AI tooling for developers.",
     repoOwner: "JaveedIshaq",
     link: "https://github.com/JaveedIshaq/ai-workflow-orchestrator",
   },
   {
-    repo: "ai-photo-enhancer",
+    repo: "puter-ai-proxy",
     contibutionDescription:
-      "AI Photo Enhancer — Image restoration powered by AI. An open-source tool for enhancing photos using artificial intelligence.",
+      "An Anthropic-compatible proxy server that routes API requests through Puter.js to free AI models. Enables Claude Code and other clients to use Puter's free AI infrastructure.",
     repoOwner: "JaveedIshaq",
-    link: "https://github.com/JaveedIshaq/ai-photo-enhancer",
+    link: "https://github.com/JaveedIshaq/puter-ai-proxy",
   },
   {
-    repo: "Best-Flutter-UI-Templates",
+    repo: "Alchemi-CLI",
     contibutionDescription:
-      "Completely free Flutter UI templates for everyone. Built with Flutter Dart — open-source design resources for the community.",
+      "AI-driven risk analysis for your terminal via GitHub Copilot CLI. Predict production breaks before they happen with intelligent code analysis.",
     repoOwner: "JaveedIshaq",
-    link: "https://github.com/JaveedIshaq/Best-Flutter-UI-Templates",
+    link: "https://github.com/JaveedIshaq/Alchemi-CLI",
+  },
+  {
+    repo: "fitness-tracker-dashboard-development",
+    contibutionDescription:
+      "A modern fitness tracker dashboard built with React, TypeScript, Tailwind CSS & Recharts featuring activity rings, step charts, calorie tracking, and heart rate zones.",
+    repoOwner: "JaveedIshaq",
+    link: "https://github.com/JaveedIshaq/fitness-tracker-dashboard-development",
+  },
+  {
+    repo: "springboot-nextjs-websocket-demo",
+    contibutionDescription:
+      "Full-stack real-time chat application demo using Spring Boot WebSocket backend and Next.js frontend. Open-source reference for WebSocket implementations.",
+    repoOwner: "JaveedIshaq",
+    link: "https://github.com/JaveedIshaq/springboot-nextjs-websocket-demo",
+  },
+  {
+    repo: "awesome-terminal-commands",
+    contibutionDescription:
+      "A curated reference for terminal commands and their usage. Helps developers quickly access commands, improve CLI proficiency, and streamline their workflow.",
+    repoOwner: "JaveedIshaq",
+    link: "https://github.com/JaveedIshaq/awesome-terminal-commands",
+  },
+  {
+    repo: "ai-plant-detection-app",
+    contibutionDescription:
+      "AI-powered plant detection and identification application. Open-source tool for plant enthusiasts using machine learning for species recognition.",
+    repoOwner: "JaveedIshaq",
+    link: "https://github.com/JaveedIshaq/ai-plant-detection-app",
+  },
+  {
+    repo: "flutter-multi-language-and-light-dark-theme-with-riverpod-demo",
+    contibutionDescription:
+      "A Flutter demo app showcasing multi-language localization and light/dark theme switching using Riverpod state management. Open-source learning resource.",
+    repoOwner: "JaveedIshaq",
+    link: "https://github.com/JaveedIshaq/flutter-multi-language-and-light-dark-theme-with-riverpod-demo",
   },
 ];
 

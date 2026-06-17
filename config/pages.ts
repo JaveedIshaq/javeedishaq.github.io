@@ -48,11 +48,11 @@ export const pagesConfig: PagesConfig = {
   },
   contributions: {
     title: "Contributions",
-    description: "Open-source contributions and community involvement.",
+    description: "My open-source contributions on GitHub — merged PRs to external projects and my own open-source repositories.",
     metadata: {
       title: "Contributions",
       description:
-        "Javeed Ishaq's open-source contributions and community involvement.",
+        "Javeed Ishaq's open-source contributions on GitHub — merged pull requests and personal open-source projects.",
     },
   },
   resume: {

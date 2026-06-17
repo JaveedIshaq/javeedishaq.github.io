@@ -20,7 +20,7 @@ export function GitHubStarBadge({ className }: GitHubStarBadgeProps) {
 
     async function load() {
       try {
-        const res = await fetch("/api/github-stars", { cache: "no-store" });
+        const res = await fetch("/github-stars.json", { cache: "no-store" });
         if (!res.ok) return;
         const data = (await res.json()) as { stars?: number | null };
         if (cancelled) return;
