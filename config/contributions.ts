@@ -7,39 +7,46 @@ export interface contributionsInterface {
 
 export const contributionsUnsorted: contributionsInterface[] = [
   {
-    repo: "minimal-next-portfolio",
+    repo: "developer-portfolios",
     contibutionDescription:
-      "Open-source Next.js portfolio template. Trusted and forked by developers worldwide (130+ GitHub stars).",
-    repoOwner: "namanbarkiya",
-    link: "https://github.com/namanbarkiya/minimal-next-portfolio",
+      "Added my portfolio to the curated list of developer portfolios. A community resource helping thousands of developers showcase their work.",
+    repoOwner: "emmabostian",
+    link: "https://github.com/emmabostian/developer-portfolios/pull/1917",
   },
   {
-    repo: "niya-saas-template",
+    repo: "curriculum",
     contibutionDescription:
-      "Modern Next.js SaaS template. Production-ready starter for devs and AI startups (30+ GitHub stars).",
-    repoOwner: "namanbarkiya",
-    link: "https://github.com/namanbarkiya/niya-saas-template",
+      "Contributed multiple Ruby on Rails and JavaScript learning projects to The Odin Project's open-source curriculum, helping learners worldwide.",
+    repoOwner: "TheOdinProject",
+    link: "https://github.com/TheOdinProject/curriculum/pulls?q=author%3AJaveedIshaq+is%3Amerged",
   },
   {
-    repo: "autogen",
+    repo: "30-Days-Of-React",
     contibutionDescription:
-      "Improved the gallery component to showcase the community work.",
-    repoOwner: "Microsoft",
-    link: "https://github.com/microsoft/autogen/pull/1445",
+      "A step-by-step guide to learn React in 30 days. A learning resource I contributed to and forked for the community.",
+    repoOwner: "JaveedIshaq",
+    link: "https://github.com/JaveedIshaq/30-Days-Of-React",
   },
   {
-    repo: "creativecommons",
+    repo: "ai-workflow-orchestrator",
     contibutionDescription:
-      "Closed Issue: Fixed navbar issue on the main website of creative common.",
-    repoOwner: "Creative Commons",
-    link: "https://github.com/creativecommons/creativecommons.github.io-source/pull/738",
+      "Reusable Claude Code skills and agents for e-commerce, analytics, development, and project-specific workflows. Open-source AI tooling.",
+    repoOwner: "JaveedIshaq",
+    link: "https://github.com/JaveedIshaq/ai-workflow-orchestrator",
   },
   {
-    repo: "creativecommons",
+    repo: "ai-photo-enhancer",
     contibutionDescription:
-      "Added section for 'Other Opportunities' on main page.",
-    repoOwner: "Creative Commons",
-    link: "https://github.com/creativecommons/creativecommons.github.io-source/pull/719",
+      "AI Photo Enhancer — Image restoration powered by AI. An open-source tool for enhancing photos using artificial intelligence.",
+    repoOwner: "JaveedIshaq",
+    link: "https://github.com/JaveedIshaq/ai-photo-enhancer",
+  },
+  {
+    repo: "Best-Flutter-UI-Templates",
+    contibutionDescription:
+      "Completely free Flutter UI templates for everyone. Built with Flutter Dart — open-source design resources for the community.",
+    repoOwner: "JaveedIshaq",
+    link: "https://github.com/JaveedIshaq/Best-Flutter-UI-Templates",
   },
 ];
 

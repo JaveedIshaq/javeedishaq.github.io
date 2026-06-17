@@ -43,7 +43,7 @@ export const experiences: ExperienceInterface[] = [
       "Supabase",
     ],
     companyUrl: "https://crunchafrica.com",
-    logo: "/experience/crunch-africa-logo.png",
+    logo: "/crunch-logo.jpeg",
   },
   {
     id: "hyperhire",
@@ -72,7 +72,7 @@ export const experiences: ExperienceInterface[] = [
       "Clean Architecture",
     ],
     companyUrl: "https://hyperhire.ai",
-    logo: "/experience/hyperhire-logo.png",
+    logo: "/hyperhire_logo.jpeg",
   },
   {
     id: "crunch-africa-1",
@@ -101,7 +101,7 @@ export const experiences: ExperienceInterface[] = [
       "CI/CD",
     ],
     companyUrl: "https://crunchafrica.com",
-    logo: "/experience/crunch-africa-logo.png",
+    logo: "/crunch-logo.jpeg",
   },
   {
     id: "gtek",
@@ -127,7 +127,7 @@ export const experiences: ExperienceInterface[] = [
       "Git",
     ],
     companyUrl: "https://gtek.solutions",
-    logo: "/experience/gtek-logo.png",
+    logo: "/gtek-logo.jpeg",
   },
   {
     id: "eeizo",
@@ -152,6 +152,6 @@ export const experiences: ExperienceInterface[] = [
       "Git",
     ],
     companyUrl: "https://eeizo.com",
-    logo: "/experience/eeizo-logo.png",
+    logo: "/eeizo.jpeg",
   },
 ];

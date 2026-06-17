@@ -1,37 +1,57 @@
 import { NextResponse } from "next/server";
 
 const REVALIDATE_SECONDS = 60 * 60 * 6; // 6 hours
+const GITHUB_USER = "JaveedIshaq";
 
-async function getGitHubRepoStars(repo: string): Promise<number | null> {
-  try {
-    const headers: Record<string, string> = {
-      Accept: "application/vnd.github+json",
-    };
+interface GitHubRepo {
+  stargazers_count: number;
+}
 
-    if (process.env.GITHUB_TOKEN) {
-      headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
-    }
+async function getAllPublicRepoStars(username: string): Promise<number> {
+  let totalStars = 0;
+  let page = 1;
+  const perPage = 100;
 
-    const res = await fetch(`https://api.github.com/repos/${repo}`, {
-      next: { revalidate: REVALIDATE_SECONDS },
-      headers,
-    });
+  const headers: Record<string, string> = {
+    Accept: "application/vnd.github+json",
+  };
 
-    if (!res.ok) return null;
-    const data = (await res.json()) as { stargazers_count?: number };
-    return typeof data.stargazers_count === "number" ? data.stargazers_count : null;
-  } catch {
-    return null;
+  if (process.env.GITHUB_TOKEN) {
+    headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
   }
+
+  while (true) {
+    const res = await fetch(
+      `https://api.github.com/users/${username}/repos?type=public&per_page=${perPage}&page=${page}`,
+      {
+        next: { revalidate: REVALIDATE_SECONDS },
+        headers,
+      }
+    );
+
+    if (!res.ok) break;
+
+    const repos = (await res.json()) as GitHubRepo[];
+    if (!Array.isArray(repos) || repos.length === 0) break;
+
+    totalStars += repos.reduce(
+      (sum, repo) => sum + (repo.stargazers_count || 0),
+      0
+    );
+
+    if (repos.length < perPage) break;
+    page++;
+  }
+
+  return totalStars;
 }
 
 export async function GET() {
-  const repo = "javeedishaq/javeedishaq.github.io";
-  const stars = await getGitHubRepoStars(repo);
+  const stars = await getAllPublicRepoStars(GITHUB_USER);
 
   return NextResponse.json({
-    repo,
-    url: `https://github.com/${repo}`,
+    user: GITHUB_USER,
+    url: `https://github.com/${GITHUB_USER}`,
     stars,
   });
 }
