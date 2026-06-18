@@ -46,7 +46,7 @@ import { IoIosGitBranch } from "react-icons/io";
 import {
   SiAngular,
   SiBootstrap,
-  SiCss,
+  SiCss3,
   SiDart,
   SiDocker,
   SiExpress,
@@ -113,7 +113,7 @@ export const Icons = {
   amazonaws: FaAws,
   angular: SiAngular,
   bootstrap: SiBootstrap,
-  css3: SiCss,
+  css3: SiCss3,
   dart: SiDart,
   docker: SiDocker,
   express: SiExpress,
