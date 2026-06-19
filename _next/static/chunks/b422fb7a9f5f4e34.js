@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,99684,e=>{"use strict";var t=e.i(47167),i=e.i(43476),r=e.i(18566),c=e.i(71645);function u(){return(0,c.useEffect)(()=>{(0,r.redirect)(t.default.env.NEXT_PUBLIC_RESUME_LINK||"/")},[]),(0,i.jsx)("div",{children:"Redirecting to the resume..."})}e.s(["default",()=>u])}]);
