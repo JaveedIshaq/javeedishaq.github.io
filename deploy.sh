@@ -25,6 +25,23 @@ if [ ! -f "out/CNAME" ]; then
 fi
 cat out/CNAME
 
+echo "📄 Copying dotfiles from public/ to out/..."
+# Next.js does NOT copy hidden files (dotfiles like .nojekyll, .well-known, etc.)
+# from public/ to out/. Copy them manually.
+for f in public/.*; do
+  basename=$(basename "$f")
+  [ "$basename" = "." ] && continue
+  [ "$basename" = ".." ] && continue
+  cp -v "$f" "out/$basename" 2>/dev/null || true
+done
+
+echo "🧹 Cleaning Turbopack debug artifacts from out/..."
+# Next.js Turbopack spills __next.*.txt debug files into the export root.
+# These are NOT production assets — strip them before deployment.
+rm -vf out/__next.*.txt out/__next.*.*.txt 2>/dev/null || true
+# Also remove Next.js internal _not-found artifacts (real 404 is 404.html)
+rm -rfv out/_not-found out/_not-found.* 2>/dev/null || true
+
 echo "📁 Preparing out/ directory for deployment..."
 cd out
 

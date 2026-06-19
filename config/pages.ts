@@ -18,7 +18,7 @@ export const pagesConfig: PagesConfig = {
     description: "Welcome to my portfolio website.",
     metadata: {
       title: "Home",
-      description: "Javeed Ishaq — Solo Product Engineer. I ship complete AI-integrated products.",
+      description: "Javeed Ishaq — Product Engineer. I build mobile and web products end-to-end with Flutter, Next.js, NestJS, and AI.",
     },
   },
   skills: {

@@ -1,18 +1,8 @@
-import { getAllBlogsMeta } from "@/lib/blogs";
 import { siteConfig } from "@/config/site";
 
 export const dynamic = "force-static";
 
 export default async function sitemap() {
-  const blogs = getAllBlogsMeta();
-
-  const blogEntries = blogs.map((blog) => ({
-    url: `${siteConfig.url}/blogs/${blog.slug}`,
-    lastModified: new Date(blog.date),
-    changeFrequency: "monthly" as const,
-    priority: 0.8,
-  }));
-
   return [
     { url: siteConfig.url, lastModified: new Date(), changeFrequency: "daily" as const, priority: 1.0 },
     { url: `${siteConfig.url}/projects`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.8 },
@@ -21,6 +11,5 @@ export default async function sitemap() {
     { url: `${siteConfig.url}/blogs`, lastModified: new Date(), changeFrequency: "weekly" as const, priority: 0.8 },
     { url: `${siteConfig.url}/contact`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
     { url: `${siteConfig.url}/resume`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.6 },
-    ...blogEntries,
   ];
 }

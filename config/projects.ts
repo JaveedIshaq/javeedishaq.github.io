@@ -47,25 +47,25 @@ export const Projects: ProjectInterface[] = [
     ],
     startDate: new Date("2024-01-01"),
     endDate: new Date("2024-12-01"),
-    companyLogoImg: "/projects/ai-plant/logo.png",
+    companyLogoImg: "/projects/ai-plant/logo.jpg",
     pagesInfoArr: [
       {
         title: "Mobile App",
         description:
           "Flutter app with plant diagnosis, care recommendations, and diagnosis history.",
-        imgArr: ["/logo.png"],
+        imgArr: ["/logo.jpg"],
       },
       {
         title: "Admin Panel",
         description:
           "Next.js admin dashboard for managing plant data, diagnoses, and care workflows.",
-        imgArr: ["/logo.png"],
+        imgArr: ["/logo.jpg"],
       },
       {
         title: "AI Backend",
         description:
           "NestJS backend with OpenAI integration for diagnosis support and recommendations.",
-        imgArr: ["/logo.png"],
+        imgArr: ["/logo.jpg"],
       },
     ],
     descriptionDetails: {
@@ -138,19 +138,19 @@ export const Projects: ProjectInterface[] = [
     ],
     startDate: new Date("2022-01-01"),
     endDate: new Date("2022-12-01"),
-    companyLogoImg: "/projects/carpool/logo.png",
+    companyLogoImg: "/projects/carpool/logo.jpg",
     pagesInfoArr: [
       {
         title: "Mobile App",
         description:
           "Flutter app with ride matching, real-time tracking, and booking workflows.",
-        imgArr: ["/logo.png"],
+        imgArr: ["/logo.jpg"],
       },
       {
         title: "Backend",
         description:
           "REST API backend for ride matching, real-time updates, and operational data.",
-        imgArr: ["/logo.png"],
+        imgArr: ["/logo.jpg"],
       },
     ],
     descriptionDetails: {
@@ -216,7 +216,7 @@ export const Projects: ProjectInterface[] = [
   },
   {
     id: "breadex",
-    companyName: "BreadEx App",
+    companyName: "BaridX: Shipping & Delivery",
     type: "Professional",
     category: ["Mobile Dev", "Full Stack", "UI/UX"],
     shortDescription:
@@ -229,7 +229,7 @@ export const Projects: ProjectInterface[] = [
     ],
     startDate: new Date("2020-06-01"),
     endDate: new Date("2020-12-01"),
-    companyLogoImg: "/projects/breadex/logo.png",
+    companyLogoImg: "/projects/baridx/logo.png",
     pagesInfoArr: [
       {
         title: "Shopping",
