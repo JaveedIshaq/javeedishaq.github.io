@@ -11,6 +11,22 @@ interface DescriptionDetailsInterface {
   bullets: string[];
 }
 
+export interface CaseStudy {
+  headline: string;
+  intro: string;
+  status?: string;
+  meta: { label: string; value: string }[];
+  problem: { title: string; body: string };
+  architecture: {
+    title: string;
+    flow: { name: string; note: string; highlight?: boolean }[];
+    pipelines: { label: string; text: string }[];
+  };
+  decisions: { title: string; why: string }[];
+  code?: { file: string; snippet: string };
+  next?: { label: string; href: string };
+}
+
 export interface ProjectInterface {
   id: string;
   type: ValidExpType;
@@ -25,6 +41,8 @@ export interface ProjectInterface {
   companyLogoImg: any;
   descriptionDetails: DescriptionDetailsInterface;
   pagesInfoArr: PagesInfoInterface[];
+  /** When set, /projects/<id> renders as a full case study. */
+  caseStudy?: CaseStudy;
 }
 
 export const Projects: ProjectInterface[] = [
@@ -49,6 +67,70 @@ export const Projects: ProjectInterface[] = [
     startDate: new Date("2026-07-01"),
     endDate: new Date("2026-10-01"),
     companyLogoImg: "/projects/huntkit/screenshot.png",
+    caseStudy: {
+      headline: "HuntKit: a job coach that grounds every answer in your real experience.",
+      intro:
+        "Generic AI resume tools invent achievements. I built a RAG system that only uses what you have actually done — and shows its sources.",
+      status: "LIVE",
+      meta: [
+        { label: "Role", value: "Solo — design, backend, web, deploy" },
+        { label: "Timeline", value: "Jul – Oct 2026" },
+        { label: "Stack", value: "NestJS · Postgres/pgvector · Next.js" },
+      ],
+      problem: {
+        title: "Tailoring a resume for every job is slow — and AI tools make things up.",
+        body: "Job seekers paste a description into a chatbot and get confident bullets about projects they never did. I wanted the opposite: answers you can trust because each one points back to a specific part of your own profile.",
+      },
+      architecture: {
+        title: "Two pipelines: ingest once, retrieve per job.",
+        flow: [
+          { name: "Next.js dashboard", note: "Netlify" },
+          { name: "NestJS API", note: "JWT · Render", highlight: true },
+          { name: "PostgreSQL + pgvector", note: "Prisma" },
+        ],
+        pipelines: [
+          {
+            label: "INGEST",
+            text: "Resume + project write-ups → chunk → OpenAI text-embedding-3-small → store vectors",
+          },
+          {
+            label: "ANALYZE",
+            text: "Job description → embed → top-8 cosine retrieval → gpt-4o-mini structured output with chunk citations",
+          },
+        ],
+      },
+      decisions: [
+        {
+          title: "pgvector inside Postgres, not a separate vector DB",
+          why: "One database for users, jobs and embeddings keeps joins simple, backups in one place and hosting cheap for an MVP.",
+        },
+        {
+          title: "Every chunk goes to the model with its id",
+          why: "Retrieved chunks are labelled with their chunk id and source, strengths come back referencing those ids, and the API returns the citations to the dashboard.",
+        },
+        {
+          title: "No evidence, no model call",
+          why: "If retrieval finds no profile context, the API records a low_context run and asks the user to add sources instead of letting the model guess.",
+        },
+        {
+          title: "AI-run observability from day one",
+          why: "Every analysis logs model, token counts, latency, status and the retrieved chunk ids to an ai_runs table, so bad answers can be debugged instead of guessed at.",
+        },
+      ],
+      code: {
+        file: "profile-retrieval.service.ts",
+        snippet: `const results = await this.prisma.$queryRaw<RetrievedChunk[]>\`
+  SELECT c.id, c.content, ps.title AS source_title,
+         1 - (c.embedding <=> \${vectorLiteral}::vector) AS score
+  FROM profile_chunks c
+  JOIN profile_sources ps ON ps.id = c.profile_source_id
+  WHERE c.user_id = \${userId}::uuid AND ps.status = 'ready'
+  ORDER BY c.embedding <=> \${vectorLiteral}::vector
+  LIMIT \${limit}
+\`;`,
+      },
+      next: { label: "Leafwell — AI plant care", href: "/projects/ai-plant-care" },
+    },
     pagesInfoArr: [
       {
         title: "Landing & Dashboard",

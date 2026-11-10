@@ -1,18 +1,18 @@
 import { Metadata } from "next";
 import Script from "next/script";
 
-import DevToBlogCard from "@/components/blogs/devto-blog-card";
-import { AnimatedSection } from "@/components/common/animated-section";
-import PageContainer from "@/components/common/page-container";
+import { BlogExplorer } from "@/components/blog/blog-explorer";
+import { SectionHeading } from "@/components/site/section-heading";
 import { pagesConfig } from "@/config/pages";
 import { siteConfig } from "@/config/site";
-import { getDevToArticles } from "@/lib/devto";
+import { getAllPosts, TOPICS } from "@/lib/blog";
 
 export const metadata: Metadata = {
   title: pagesConfig.blogs.metadata.title,
   description: pagesConfig.blogs.metadata.description,
   alternates: {
     canonical: `${siteConfig.url}/blogs`,
+    types: { "application/rss+xml": `${siteConfig.url}/feed.xml` },
   },
   openGraph: {
     title: `${pagesConfig.blogs.metadata.title} | ${siteConfig.name}`,
@@ -20,14 +20,7 @@ export const metadata: Metadata = {
     url: `${siteConfig.url}/blogs`,
     siteName: siteConfig.name,
     type: "website",
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-        alt: `${siteConfig.authorName} Blog`,
-      },
-    ],
+    images: [{ url: siteConfig.ogImage, width: 1200, height: 630, alt: `${siteConfig.authorName} Blog` }],
   },
   twitter: {
     card: "summary_large_image",
@@ -39,114 +32,71 @@ export const metadata: Metadata = {
 };
 
 export default async function BlogsPage() {
-  const devToArticles = await getDevToArticles("javeedishaq");
+  const posts = await getAllPosts();
+  const topics = TOPICS.filter((t) => posts.some((p) => p.topic === t));
 
-  // CollectionPage + Blog JSON-LD for the listing page
-  const blogListSchema = {
+  const blogSchema = {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    name: `${siteConfig.authorName} — Blog`,
+    "@type": "Blog",
+    name: `${siteConfig.authorName}'s Blog`,
     description: pagesConfig.blogs.metadata.description,
     url: `${siteConfig.url}/blogs`,
-    isPartOf: {
-      "@type": "WebSite",
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
-    author: {
-      "@type": "Person",
-      name: siteConfig.authorName,
-      url: siteConfig.url,
-    },
-    mainEntity: {
-      "@type": "Blog",
-      name: `${siteConfig.authorName}'s Blog`,
-      description: pagesConfig.blogs.metadata.description,
-      url: `${siteConfig.url}/blogs`,
-      author: {
-        "@type": "Person",
-        name: siteConfig.authorName,
-        url: siteConfig.url,
-      },
-      blogPost: devToArticles.map((article) => ({
-        "@type": "BlogPosting",
-        headline: article.title,
-        description: article.description,
-        datePublished: article.published_at,
-        url: article.url,
-        author: {
-          "@type": "Person",
-          name: siteConfig.authorName,
-        },
-        keywords: article.tag_list.join(", "),
-        ...(article.cover_image && {
-          image: article.cover_image,
-        }),
-      })),
-    },
-  };
-
-  // BreadcrumbList for site hierarchy
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: siteConfig.url,
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Blogs",
-        item: `${siteConfig.url}/blogs`,
-      },
-    ],
+    author: { "@type": "Person", name: siteConfig.authorName, url: siteConfig.url },
+    blogPost: posts.map((p) => ({
+      "@type": "BlogPosting",
+      headline: p.title,
+      description: p.description,
+      datePublished: p.date,
+      url: p.externalUrl ?? `${siteConfig.url}/blogs/${p.slug}`,
+      keywords: p.tags.join(", "),
+    })),
   };
 
   return (
     <>
       <Script
-        id="schema-blog-list"
+        id="schema-blog"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogListSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
       />
-      <Script
-        id="schema-breadcrumb-blogs"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <PageContainer
-        title={pagesConfig.blogs.title}
-        description={pagesConfig.blogs.description}
-      >
-        {devToArticles.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-24 text-center">
-            <p className="text-4xl mb-4">✍️</p>
-            <h3 className="text-xl font-semibold text-foreground mb-2">
-              No posts yet
-            </h3>
-            <p className="text-muted-foreground text-sm">
-              Check back soon — posts are coming.
+      <section className="flex flex-col gap-4 pb-6 pt-16">
+        <SectionHeading as="h1" eyebrow="Writing" title="Notes from shipping products." />
+        <p className="max-w-[640px] text-lg text-[#AEB7C4]">
+          Practical write-ups on Flutter, NestJS, Next.js and building AI features that hold up
+          in production.
+        </p>
+      </section>
+
+      <BlogExplorer posts={posts} topics={topics} />
+
+      <section aria-labelledby="follow-h" className="pb-8 pt-6">
+        <div className="flex flex-wrap items-center justify-between gap-6 rounded-[20px] border border-[#1F3B38] bg-[#0E1716] p-7 sm:p-9">
+          <div className="flex min-w-0 flex-[1_1_380px] flex-col gap-2">
+            <h2 id="follow-h" className="font-heading text-[28px] font-semibold">
+              Follow new articles
+            </h2>
+            <p className="text-[#AEB7C4]">
+              Subscribe with any RSS reader, or follow me on dev.to to get new posts in your feed.
             </p>
           </div>
-        ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-2">
-            {devToArticles.map((article, index) => (
-              <AnimatedSection
-                key={`devto-${article.id}`}
-                delay={0.05 * index}
-                direction="up"
-                className="h-full"
-              >
-                <DevToBlogCard article={article} />
-              </AnimatedSection>
-            ))}
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="/feed.xml"
+              className="rounded-[10px] border border-input px-5 py-3 text-[15px] font-medium"
+            >
+              RSS feed
+            </a>
+            <a
+              href={siteConfig.links.devto}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-[10px] bg-primary px-5 py-3 text-[15px] font-semibold text-primary-foreground"
+            >
+              Follow on dev.to
+            </a>
           </div>
-        )}
-      </PageContainer>
+        </div>
+      </section>
     </>
   );
 }

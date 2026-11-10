@@ -1,18 +1,30 @@
 export const siteConfig = {
-  name: "Javeed Ishaq - Product Engineer",
+  name: "Javeed Ishaq — Full-Stack Product Engineer",
   authorName: "Javeed Ishaq",
   username: "javeedishaq",
   description:
-    "Javeed Ishaq — Product Engineer specializing in Flutter, Next.js, NestJS, PostgreSQL, and Supabase. I build mobile and web products end-to-end — APIs, admin panels, authentication flows, and practical AI features like search, summaries, and retrieval.",
-  url: "https://javeedishaq.com",
+    "Javeed Ishaq is a full-stack product engineer from Pakistan with 8+ years of experience. He ships complete mobile and web products with Flutter, Next.js, NestJS, PostgreSQL and practical AI (RAG, pgvector, OpenAI).",
+  url: "https://www.javeedishaq.com",
+  email: "ishaqjaveed1@gmail.com",
+  resume: "/javeed-ishaq-resume.pdf",
+  // Shown as a pill in the hero. Set to "" to hide it.
+  availability: "Open to remote product-engineering roles · UTC+5",
+  company: {
+    name: "Alchemify Space",
+    legalName: "ALCHEMIFYSPACE (SMC-PRIVATE) LIMITED",
+    url: "https://alchemify.space",
+    role: "Founder",
+    foundingDate: "2026-09-21",
+  },
   links: {
     twitter: "https://x.com/javeedishaq",
     github: "https://github.com/javeedishaq",
-    linkedin: "https://linkedin.com/in/javeedishaq",
+    linkedin: "https://www.linkedin.com/in/javeed-ishaq/",
     calendly: "https://calendly.com/javeedishaq",
+    stackoverflow: "https://stackoverflow.com/users/4778545/javeed-ishaq",
+    devto: "https://dev.to/javeedishaq",
   },
-  ogImage:
-    "https://res.cloudinary.com/dvt5vkfwz/image/upload/v1767384721/javeed_portfolio_og_image.png",
+  ogImage: "https://www.javeedishaq.com/og-image.png",
   iconIco: "/favicon.ico",
   logoIcon: "/favicon.ico",
   keywords: [
@@ -43,5 +55,8 @@ export const siteConfig = {
     "RBAC",
     "Software Engineer",
     "Tech Portfolio",
+    "Alchemify Space",
+    "Pakistan",
+    "Remote",
   ],
 };

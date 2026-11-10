@@ -1,8 +1,10 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
 import { Icons } from "@/components/common/icons";
+import { CaseStudyView } from "@/components/projects/case-study";
 import ProjectDescription from "@/components/projects/project-description";
 import { buttonVariants } from "@/components/ui/button";
 import ChipContainer from "@/components/ui/chip-container";
@@ -26,11 +28,41 @@ export function generateStaticParams() {
   }));
 }
 
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+  const { projectId } = await params;
+  const project = Projects.find((p) => p.id === projectId);
+  if (!project) return {};
+  const title = project.caseStudy
+    ? `${project.companyName} — Case Study`
+    : project.companyName;
+  const description = project.caseStudy?.intro ?? project.shortDescription;
+  const image = project.companyLogoImg.startsWith("/")
+    ? `${siteConfig.url}${project.companyLogoImg}`
+    : siteConfig.ogImage;
+  return {
+    title,
+    description,
+    alternates: { canonical: `/projects/${project.id}` },
+    openGraph: {
+      title: `${title} | ${siteConfig.authorName}`,
+      description,
+      url: `${siteConfig.url}/projects/${project.id}`,
+      type: "article",
+      images: [{ url: image }],
+    },
+    twitter: { card: "summary_large_image", title, description, images: [image] },
+  };
+}
+
 export default async function Project({ params }: ProjectPageProps) {
   const { projectId } = await params;
   let project = Projects.find((val) => val.id === projectId);
   if (!project) {
     redirect("/projects");
+  }
+
+  if (project.caseStudy) {
+    return <CaseStudyView project={project} />;
   }
 
   return (

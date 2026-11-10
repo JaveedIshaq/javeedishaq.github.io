@@ -1,9 +1,11 @@
 import "./globals.css";
 
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { Inter as FontSans } from "next/font/google";
-import localFont from "next/font/local";
-import Script from "next/script";
+import {
+  Inter as FontSans,
+  JetBrains_Mono as FontMono,
+  Space_Grotesk as FontHeading,
+} from "next/font/google";
 
 import { Analytics } from "@/components/common/analytics";
 import { ThemeProvider } from "@/components/common/theme-provider";
@@ -17,10 +19,16 @@ const fontSans = FontSans({
   variable: "--font-sans",
 });
 
-// Font files can be colocated inside of `pages`
-const fontHeading = localFont({
-  src: "../assets/fonts/CalSans-SemiBold.woff2",
+const fontHeading = FontHeading({
+  subsets: ["latin"],
+  weight: ["500", "600", "700"],
   variable: "--font-heading",
+});
+
+const fontMono = FontMono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
 });
 
 interface RootLayoutProps {
@@ -31,7 +39,7 @@ export const metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.name,
-    template: `%s | ${siteConfig.name}`,
+    template: `%s | ${siteConfig.authorName}`,
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
@@ -81,9 +89,6 @@ export const metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/manifest.webmanifest",
-  alternates: {
-    canonical: siteConfig.url,
-  },
   robots: {
     index: true,
     follow: true,
@@ -112,23 +117,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable,
-          fontHeading.variable
+          fontHeading.variable,
+          fontMono.variable
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          themes={[
-            "light",
-            "dark",
-            "retro",
-            "cyberpunk",
-            "paper",
-            "aurora",
-            "synthwave",
-          ]}
-        >
+        <ThemeProvider attribute="class" forcedTheme="dark" defaultTheme="dark">
           {children}
           <Analytics />
           <Toaster />

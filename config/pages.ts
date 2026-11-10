@@ -25,25 +25,25 @@ export const pagesConfig: PagesConfig = {
     title: "Skills",
     description: "Key skills that define my professional identity.",
     metadata: {
-      title: "Skills",
+      title: "Tech Stack",
       description:
-        "Javeed Ishaq's key skills — Flutter, Next.js, NestJS, PostgreSQL, AI.",
+        "The tools Javeed Ishaq uses in production: Flutter, Dart, Next.js, React, NestJS, Node.js, PostgreSQL, Supabase, OpenAI, RAG and pgvector.",
     },
   },
   projects: {
     title: "Projects",
     description: "Showcasing impactful products and technical achievements.",
     metadata: {
-      title: "Projects",
-      description: "Javeed Ishaq's shipped products — mobile, web, and backend.",
+      title: "Work & Case Studies",
+      description: "Products shipped by Javeed Ishaq: HuntKit (a RAG job coach), Leafwell (AI plant care) and Flutter apps used by thousands of real users.",
     },
   },
   contact: {
     title: "Contact",
     description: "Let's connect and explore collaborations.",
     metadata: {
-      title: "Contact",
-      description: "Contact Javeed Ishaq — let's build something together.",
+      title: "Contact — Hire a Full-Stack Product Engineer",
+      description: "Contact Javeed Ishaq for remote full-stack, Flutter or AI product-engineering work. Book a call or send an email.",
     },
   },
   contributions: {
@@ -68,9 +68,9 @@ export const pagesConfig: PagesConfig = {
     description:
       "Thoughts on product engineering, AI, and building in public.",
     metadata: {
-      title: "Blogs",
+      title: "Writing",
       description:
-        "Javeed Ishaq's blog — thoughts on product engineering, AI, and building in public.",
+        "Articles by Javeed Ishaq on Flutter, NestJS, Next.js and building AI features (RAG, pgvector, OpenAI) that hold up in production.",
     },
   },
   experience: {

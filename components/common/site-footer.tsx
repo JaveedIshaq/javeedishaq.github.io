@@ -1,32 +1,82 @@
 import Link from "next/link";
-import * as React from "react";
 
-import { buttonVariants } from "@/components/ui/button";
-import CustomTooltip from "@/components/ui/custom-tooltip";
-import { SocialLinks } from "@/config/socials";
-import { cn } from "@/lib/utils";
+import { Logo } from "@/components/site/site-header";
+import { routesConfig } from "@/config/routes";
+import { siteConfig } from "@/config/site";
 
-export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
+export function SiteFooter() {
+  const socials = [
+    { name: "GitHub", href: siteConfig.links.github },
+    { name: "LinkedIn", href: siteConfig.links.linkedin },
+    { name: "Stack Overflow", href: siteConfig.links.stackoverflow },
+    { name: "dev.to", href: siteConfig.links.devto },
+    { name: "X", href: siteConfig.links.twitter },
+    { name: siteConfig.company.name, href: siteConfig.company.url },
+  ];
+
   return (
-    <footer className={cn(className)}>
-      <div className="container flex items-center justify-center gap-8 mt-10 py-10 md:h-24">
-        {SocialLinks.map((item, ind) => (
-          <CustomTooltip icon={item.icon} text={item.username} key={ind}>
-            <Link
-              href={item.link}
+    <footer className="mt-24 border-t border-border">
+      <div className="mx-auto flex max-w-[1200px] flex-wrap justify-between gap-10 px-6 py-12">
+        <div className="flex max-w-sm flex-col gap-3">
+          <Logo />
+          <p className="text-sm text-muted-foreground">
+            Full-stack product engineer — Flutter, Next.js, NestJS and AI.
+            Based in Sahiwal, Pakistan, working remotely worldwide.
+          </p>
+          <p className="text-sm text-muted-foreground">
+            Founder of{" "}
+            <a
+              href={siteConfig.company.url}
               target="_blank"
-              className={cn(
-                buttonVariants({
-                  variant: "ghost",
-                  size: "sm",
-                }),
-                "h-10 w-10 p-2"
-              )}
+              rel="noopener"
+              className="text-primary"
             >
-              <item.icon className="h-5 w-5" />
-            </Link>
-          </CustomTooltip>
-        ))}
+              {siteConfig.company.name}
+            </a>{" "}
+            · {siteConfig.company.legalName}
+          </p>
+          <a href={`mailto:${siteConfig.email}`} className="text-sm text-primary">
+            {siteConfig.email}
+          </a>
+        </div>
+        <nav aria-label="Footer" className="flex flex-wrap gap-12">
+          <div className="flex flex-col gap-2">
+            <span className="font-mono text-xs uppercase tracking-[0.08em] text-muted-foreground">
+              Site
+            </span>
+            {routesConfig.footerNav.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="py-1 text-sm text-[#C9D1DC] hover:text-foreground"
+              >
+                {item.title}
+              </Link>
+            ))}
+          </div>
+          <div className="flex flex-col gap-2">
+            <span className="font-mono text-xs uppercase tracking-[0.08em] text-muted-foreground">
+              Elsewhere
+            </span>
+            {socials.map((s) => (
+              <a
+                key={s.name}
+                href={s.href}
+                target="_blank"
+                rel="noreferrer"
+                className="py-1 text-sm text-[#C9D1DC] hover:text-foreground"
+              >
+                {s.name}
+              </a>
+            ))}
+          </div>
+        </nav>
+      </div>
+      <div className="border-t border-border">
+        <div className="mx-auto flex max-w-[1200px] flex-wrap justify-between gap-3 px-6 py-6 text-[13px] text-muted-foreground">
+          <span>© {new Date().getFullYear()} {siteConfig.authorName} · Built with Next.js</span>
+          <span className="font-mono">“Whatever you are, be the good one.”</span>
+        </div>
       </div>
     </footer>
   );

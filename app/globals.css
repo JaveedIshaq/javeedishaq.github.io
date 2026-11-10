@@ -666,3 +666,153 @@
   margin: 1.5rem auto;
   display: block;
 }
+/* ===================================================================
+   Portfolio v2 theme — dark ink + teal signal (overrides tokens above)
+   =================================================================== */
+@layer base {
+  :root,
+  .dark {
+    --background: 220 23% 5%;      /* #0A0C10 */
+    --foreground: 216 33% 93%;     /* #E8ECF2 */
+    --card: 218 24% 9%;            /* #11151C */
+    --card-foreground: 216 33% 93%;
+    --popover: 218 24% 9%;
+    --popover-foreground: 216 33% 93%;
+    --muted: 218 24% 9%;
+    --muted-foreground: 215 14% 65%; /* #9AA4B2 */
+    --border: 218 21% 17%;         /* #232A36 */
+    --input: 218 21% 21%;          /* #2A3240 */
+    --primary: 171 77% 64%;        /* #5EEAD4 */
+    --primary-foreground: 220 23% 5%;
+    --secondary: 218 21% 13%;
+    --secondary-foreground: 216 33% 93%;
+    --accent: 218 21% 13%;
+    --accent-foreground: 216 33% 93%;
+    --ring: 171 77% 64%;
+    --radius: 0.75rem;
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background: hsl(171 77% 64% / 0.3);
+  }
+}
+
+/* Long-form article typography (blog posts) */
+.article-body {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #d5dbe3;
+}
+.article-body > * + * {
+  margin-top: 1.25em;
+}
+.article-body h2 {
+  margin-top: 2em;
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  line-height: 1.25;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  scroll-margin-top: 96px;
+}
+.article-body h3 {
+  margin-top: 1.6em;
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  scroll-margin-top: 96px;
+}
+.article-body a {
+  color: hsl(var(--primary));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.article-body strong {
+  color: hsl(var(--foreground));
+}
+.article-body ul,
+.article-body ol {
+  padding-left: 1.4em;
+}
+.article-body ul {
+  list-style: disc;
+}
+.article-body ol {
+  list-style: decimal;
+}
+.article-body li + li {
+  margin-top: 0.4em;
+}
+.article-body blockquote {
+  border: 1px solid #1f3b38;
+  background: #0e1716;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  color: #c9d1dc;
+}
+.article-body :not(pre) > code {
+  font-family: var(--font-mono);
+  font-size: 0.88em;
+  background: #161b24;
+  border: 1px solid hsl(var(--border));
+  border-radius: 6px;
+  padding: 0.1em 0.35em;
+}
+.article-body pre {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.7;
+  background: #0d1117;
+  border: 1px solid hsl(var(--border));
+  border-radius: 12px;
+  padding: 1.1rem 1.25rem;
+  overflow-x: auto;
+  color: #c9d1dc;
+}
+.article-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  display: block;
+  overflow-x: auto;
+}
+.article-body th,
+.article-body td {
+  border: 1px solid hsl(var(--border));
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+}
+.article-body img {
+  border-radius: 12px;
+  border: 1px solid hsl(var(--border));
+}
+.article-body hr {
+  border-color: hsl(var(--border));
+}
+
+/* Prism tokens (remark-prism) */
+.article-body .token.comment,
+.article-body .token.prolog,
+.article-body .token.doctype { color: #7d8796; }
+.article-body .token.keyword,
+.article-body .token.builtin,
+.article-body .token.important { color: #c4b5fd; }
+.article-body .token.string,
+.article-body .token.char,
+.article-body .token.attr-value { color: #86efac; }
+.article-body .token.number,
+.article-body .token.boolean,
+.article-body .token.constant { color: #fcd34d; }
+.article-body .token.function,
+.article-body .token.class-name { color: #5eead4; }
+.article-body .token.operator,
+.article-body .token.punctuation { color: #9aa4b2; }
+.article-body .token.tag,
+.article-body .token.property { color: #93c5fd; }

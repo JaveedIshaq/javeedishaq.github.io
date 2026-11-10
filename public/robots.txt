@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://javeedishaq.com/sitemap.xml 
+Sitemap: https://www.javeedishaq.com/sitemap.xml 

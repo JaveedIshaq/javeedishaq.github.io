@@ -2,6 +2,8 @@
 const nextConfig = {
   output: "export",
   distDir: "out",
+  // remark-prism relies on jsdom, which breaks when bundled; load it from node_modules.
+  serverExternalPackages: ["remark-prism", "jsdom"],
   images: {
     unoptimized: true,
     remotePatterns: [
