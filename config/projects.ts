@@ -29,12 +29,55 @@ export interface ProjectInterface {
 
 export const Projects: ProjectInterface[] = [
   {
+    id: "huntkit",
+    companyName: "HuntKit — RAG Job-Hunt Assistant",
+    type: "Personal",
+    category: ["Full Stack", "AI/ML", "Backend", "Web Dev"],
+    shortDescription:
+      "Live AI job coach: paste a job description and RAG retrieves your real resume and project data to return a match score, strengths/gaps, tailored bullets, and interview questions — with citations, no invented experience.",
+    websiteLink: "https://hunt-kit.netlify.app/",
+    githubLink: "https://github.com/JaveedIshaq/job-huntkit-workspace",
+    techStack: [
+      "Nest.js",
+      "Typescript",
+      "PostgreSQL",
+      "Prisma",
+      "Next.js",
+      "OpenAI",
+      "Netlify",
+    ],
+    startDate: new Date("2026-07-01"),
+    endDate: new Date("2026-10-01"),
+    companyLogoImg: "/projects/huntkit/screenshot.png",
+    pagesInfoArr: [
+      {
+        title: "Landing & Dashboard",
+        description:
+          "Next.js dashboard: add your profile, save jobs, track them through the pipeline, and run AI match analysis.",
+        imgArr: ["/projects/huntkit/screenshot.png"],
+      },
+    ],
+    descriptionDetails: {
+      paragraphs: [
+        "HuntKit is a solo full-stack MVP that grounds every job-match suggestion in your real experience. Paste a job description and a RAG pipeline retrieves the most relevant resume and project chunks, then returns a match score, strengths and gaps, tailored resume bullets, likely interview questions, and citations to the exact profile parts it used.",
+        "Built as a Turborepo monorepo with a NestJS + PostgreSQL/pgvector API (deployed on Render) and a Next.js dashboard (deployed on Netlify).",
+      ],
+      bullets: [
+        "NestJS JWT authentication and user profiles.",
+        "Profile ingest pipeline: chunking and OpenAI embeddings stored in PostgreSQL with pgvector.",
+        "pgvector cosine-similarity retrieval feeding structured OpenAI outputs with citations.",
+        "Job pipeline tracking from saved to offer, plus AI run observability.",
+        "Prisma data layer and Next.js dashboard; deployed on Netlify + Render.",
+      ],
+    },
+  },
+  {
     id: "ai-plant-care",
-    companyName: "AI Plant Detection & Care App",
-    type: "Professional",
+    companyName: "Leafwell — AI Plant Care",
+    type: "Personal",
     category: ["Mobile Dev", "Full Stack", "AI/ML", "Web Dev"],
     shortDescription:
-      "Plant-care product with mobile app, admin panel, custom backend, diagnosis history, and AI-powered care workflows.",
+      "Full-lifecycle plant-care product: Flutter mobile app, NestJS + PostgreSQL backend, Next.js admin, and practical AI for diagnosis, care recommendations, and follow-up workflows.",
     websiteLink: "https://javeedishaq.com",
     techStack: [
       "Flutter",

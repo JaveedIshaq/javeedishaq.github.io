@@ -1,10 +1,19 @@
 "use client";
-import { redirect } from "next/navigation";
 import { useEffect } from "react";
+
+const RESUME_URL = "/javeed-ishaq-resume.pdf";
 
 export default function ResumePage() {
   useEffect(() => {
-    redirect(process.env.NEXT_PUBLIC_RESUME_LINK || "/");
+    window.location.replace(RESUME_URL);
   }, []);
-  return <div>Redirecting to the resume...</div>;
+  return (
+    <div className="container py-20 text-center">
+      Redirecting to the resume…{" "}
+      <a href={RESUME_URL} className="underline">
+        Open it here
+      </a>
+      .
+    </div>
+  );
 }

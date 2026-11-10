@@ -116,7 +116,7 @@ export default async function IndexPage() {
               </AnimatedText>
               <AnimatedText delay={1.0}>
                 <Link
-                  href="https://drive.google.com/file/d/1tSOHpDjVRiBalrMbC6pF7k3a7AcWCcui/view?usp=sharing"
+                  href="/javeed-ishaq-resume.pdf"
                   target="_blank"
                   rel="noreferrer"
                   className={cn(
