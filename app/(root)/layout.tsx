@@ -1,5 +1,6 @@
 import { SiteFooter } from "@/components/common/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
+import { WhatsAppButton } from "@/components/site/whatsapp-button";
 
 interface MarketingLayoutProps {
   children: React.ReactNode;
@@ -13,6 +14,7 @@ export default function MarketingLayout({ children }: MarketingLayoutProps) {
         {children}
       </main>
       <SiteFooter />
+      <WhatsAppButton />
     </div>
   );
 }

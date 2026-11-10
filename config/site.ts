@@ -9,11 +9,20 @@ export const siteConfig = {
   resume: "/javeed-ishaq-resume.pdf",
   // Shown as a pill in the hero. Set to "" to hide it.
   availability: "Open to remote product-engineering roles · UTC+5",
+  // WhatsApp Business (shared with Alchemify Space). Digits only for wa.me links.
+  whatsapp: {
+    number: "923101556061",
+    display: "+92 310 1556061",
+  },
+  // Web3Forms public access key — delivers contact-form emails to ishaqjaveed1@gmail.com.
+  web3formsKey: "0eca55c4-a5aa-4954-9d75-25e07258a784",
   company: {
     name: "Alchemify Space",
     legalName: "ALCHEMIFYSPACE (SMC-PRIVATE) LIMITED",
     url: "https://alchemify.space",
     role: "Founder",
+    description:
+      "Flutter + AI studio: white-label mobile development, AI features for existing apps, and ready-made app templates.",
     foundingDate: "2026-09-21",
   },
   links: {

@@ -45,6 +45,7 @@ export default async function IndexPage() {
     "@id": `${siteConfig.company.url}/#organization`,
     name: siteConfig.company.name,
     legalName: siteConfig.company.legalName,
+    description: siteConfig.company.description,
     url: siteConfig.company.url,
     foundingDate: siteConfig.company.foundingDate,
     founder: { "@id": `${siteConfig.url}/#person` },
@@ -363,7 +364,8 @@ export default async function IndexPage() {
             >
               {siteConfig.company.name} ↗
             </a>{" "}
-            — my registered studio that publishes my own mobile apps.
+            — a Flutter + AI studio building apps, ready-made templates and AI features for
+            agencies and growing businesses.
           </p>
         </div>
         <ol className="flex min-w-0 flex-[2_1_560px] flex-col">
@@ -453,7 +455,7 @@ export default async function IndexPage() {
           </div>
           <div className="flex flex-[0_1_320px] flex-col gap-3">
             <a href={siteConfig.links.calendly} target="_blank" rel="noreferrer" className={btnPrimary}>
-              Book a 20-min call
+              Book a 15-min call
             </a>
             <a href={`mailto:${siteConfig.email}`} className={btnOutline}>
               {siteConfig.email}

@@ -14,6 +14,11 @@
 
 set -e  # exit on any error
 
+echo "🧽 Clearing Next.js build cache..."
+# A stale .next cache can break next/font/google under Turbopack
+# ("next/font/google queries have exactly one entry"). Start clean every time.
+rm -rf .next
+
 echo "🚀 Building static site..."
 npm run build
 
