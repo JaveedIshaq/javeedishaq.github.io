@@ -21,7 +21,7 @@ import { siteConfig } from "@/config/site";
 import { featuredSkills } from "@/config/skills";
 import { getDevToArticles } from "@/lib/devto";
 import { cn } from "@/lib/utils";
-import profileImg from "@/public/javeedishaq-profile-img.png";
+import profileImg from "@/public/mydp.jpeg";
 
 export const metadata: Metadata = {
   title: `${pagesConfig.home.metadata.title}`,
