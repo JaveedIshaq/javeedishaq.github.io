@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>Javeed Ishaq — Writing</title>
+    <link>https://www.javeedishaq.com/blogs</link>
+    <description>Notes from shipping products: Flutter, NestJS, Next.js and AI.</description>
+    <language>en</language>
+    <item>
+      <title>Building a RAG job coach with NestJS and pgvector</title>
+      <link>https://www.javeedishaq.com/blogs/building-a-rag-job-coach-with-nestjs-and-pgvector</link>
+      <guid>https://www.javeedishaq.com/blogs/building-a-rag-job-coach-with-nestjs-and-pgvector</guid>
+      <pubDate>Tue, 10 Nov 2026 00:00:00 GMT</pubDate>
+      <description>How HuntKit retrieves the right evidence from a resume for every job description — and makes the model cite it.</description>
+      <category>AI</category>
+    </item>
+    <item>
+      <title>The Ownership Framework: How to Use AI to Write Code Without Losing Your Mind</title>
+      <link>https://dev.to/javeedishaq/the-ownership-framework-build-what-you-understand-ship-what-you-own-1pae</link>
+      <guid>https://dev.to/javeedishaq/the-ownership-framework-build-what-you-understand-ship-what-you-own-1pae</guid>
+      <pubDate>Thu, 30 Apr 2026 03:46:22 GMT</pubDate>
+      <description>Every developer is using AI to write code — but most are shipping code they secretly don't understand, and that's the most dangerous technical debt you'll ever carry.</description>
+      <category>AI</category>
+    </item>
+    <item>
+      <title>The Rebuild Framework: A Learning Method for Developers</title>
+      <link>https://dev.to/javeedishaq/the-rebuild-framework-a-learning-method-for-developers-272d</link>
+      <guid>https://dev.to/javeedishaq/the-rebuild-framework-a-learning-method-for-developers-272d</guid>
+      <pubDate>Thu, 30 Apr 2026 02:50:51 GMT</pubDate>
+      <description>Rebuild projects endpoint by endpoint — write it badly first, compare to the old code after, judge what's worth keeping, and repeat until done.</description>
+      <category>Web</category>
+    </item>
+    <item>
+      <title>Mastering Dart Enums: From Basic Lists to Supercharged Classes</title>
+      <link>https://dev.to/javeedishaq/mastering-dart-enums-from-basic-lists-to-supercharged-classes-200e</link>
+      <guid>https://dev.to/javeedishaq/mastering-dart-enums-from-basic-lists-to-supercharged-classes-200e</guid>
+      <pubDate>Sat, 29 Nov 2025 03:49:19 GMT</pubDate>
+      <description>A simple guide to understanding &quot;Enhanced Enums&quot; in Dart, explained with sticky notes and real-world examples.</description>
+      <category>Flutter</category>
+    </item>
+    <item>
+      <title>Gemini CLI tells: What Tools Do the Gemini CLI Use for AI Coding? Comparing Gemini, Claude, and Cursor</title>
+      <link>https://dev.to/javeedishaq/gemini-cli-tells-what-tools-do-the-gemini-cli-use-for-ai-coding-comparing-gemini-claude-and-416f</link>
+      <guid>https://dev.to/javeedishaq/gemini-cli-tells-what-tools-do-the-gemini-cli-use-for-ai-coding-comparing-gemini-claude-and-416f</guid>
+      <pubDate>Thu, 26 Jun 2025 05:59:25 GMT</pubDate>
+      <description>Gemini acts as a conversational AI agent with direct filesystem access and multi-step automation, contrasting with Cursor's IDE-integrated real-time suggestions and Claude's general-purpose web-based chat for conceptual tasks. </description>
+      <category>AI</category>
+    </item>
+    <item>
+      <title>How to Supercharge Your Coding Skills with AI—Without Losing Your Edge</title>
+      <link>https://dev.to/javeedishaq/how-to-supercharge-your-coding-skills-with-ai-without-losing-your-edge-42gh</link>
+      <guid>https://dev.to/javeedishaq/how-to-supercharge-your-coding-skills-with-ai-without-losing-your-edge-42gh</guid>
+      <pubDate>Wed, 25 Jun 2025 11:54:47 GMT</pubDate>
+      <description>Use AI to code smarter—not lazier. Discover a balanced workflow that strengthens your skills while leveraging the power of AI.</description>
+      <category>AI</category>
+    </item>
+    <item>
+      <title>Flutter Feature Pattern Tutorial: Building Scalable &amp; Maintainable Feature-based architecture</title>
+      <link>https://dev.to/javeedishaq/flutter-feature-pattern-tutorial-building-scalable-maintainable-features-4p4l</link>
+      <guid>https://dev.to/javeedishaq/flutter-feature-pattern-tutorial-building-scalable-maintainable-features-4p4l</guid>
+      <pubDate>Tue, 01 Apr 2025 10:54:26 GMT</pubDate>
+      <description>This tutorial guides junior Flutter developers on implementing a robust and scalable feature...</description>
+      <category>Flutter</category>
+    </item>
+    <item>
+      <title>A plan to Master Android development in 30 days</title>
+      <link>https://dev.to/javeedishaq/a-plan-to-master-android-development-in-30-days-4271</link>
+      <guid>https://dev.to/javeedishaq/a-plan-to-master-android-development-in-30-days-4271</guid>
+      <pubDate>Tue, 01 Apr 2025 10:32:59 GMT</pubDate>
+      <description>Android Development Learning</description>
+      <category>Mobile</category>
+    </item>
+    <item>
+      <title>Mastering Claude 3.7: Effective Prompting Techniques for Developers</title>
+      <link>https://dev.to/javeedishaq/mastering-claude-37-effective-prompting-techniques-for-developers-1neg</link>
+      <guid>https://dev.to/javeedishaq/mastering-claude-37-effective-prompting-techniques-for-developers-1neg</guid>
+      <pubDate>Thu, 20 Mar 2025 01:33:56 GMT</pubDate>
+      <description>Unlock the full potential of Claude 3.7 for software development with this comprehensive guide. Learn practical prompting strategies to enhance coding, debugging, and architectural decision-making, complete with examples and workflows tailored for developers.</description>
+      <category>AI</category>
+    </item>
+    <item>
+      <title>Developer Mental Health: A Comprehensive Guide</title>
+      <link>https://dev.to/javeedishaq/developer-mental-health-a-comprehensive-guide-22ph</link>
+      <guid>https://dev.to/javeedishaq/developer-mental-health-a-comprehensive-guide-22ph</guid>
+      <pubDate>Tue, 28 Jan 2025 17:19:50 GMT</pubDate>
+      <description>A serene developer workspace promoting mental wellness, featuring a modern ergonomic setup with calming elements like plants, warm lighting, and a coffee mug. The backdrop subtly integrates coding-themed visuals, creating a harmonious balance between work and relaxation. The soothing color palette emphasizes focus, mindfulness, and the importance of self-care for developers.</description>
+      <category>Career</category>
+    </item>
+    <item>
+      <title>Spring AI Information and usages</title>
+      <link>https://dev.to/javeedishaq/sprin-ai-information-and-usages-2h68</link>
+      <guid>https://dev.to/javeedishaq/sprin-ai-information-and-usages-2h68</guid>
+      <pubDate>Sat, 18 Jan 2025 07:23:39 GMT</pubDate>
+      <description>Spring AI is a project aimed at simplifying the integration of Artificial Intelligence (AI) and...</description>
+      <category>AI</category>
+    </item>
+    <item>
+      <title>MYTH: You Need a CS Degree to Get Started with Software Engineering</title>
+      <link>https://dev.to/javeedishaq/myth-you-need-a-cs-degree-to-get-started-with-software-engineering-2dl5</link>
+      <guid>https://dev.to/javeedishaq/myth-you-need-a-cs-degree-to-get-started-with-software-engineering-2dl5</guid>
+      <pubDate>Sat, 21 Dec 2024 08:49:23 GMT</pubDate>
+      <description>Debunk the myth that a CS degree is essential for software engineering. Discover 7 free online courses to kickstart your journey with just the Internet!</description>
+      <category>Career</category>
+    </item>
+    <item>
+      <title>Strategic Plan to Build an Impressive Android Development Portfolio</title>
+      <link>https://dev.to/javeedishaq/strategic-plan-to-build-an-impressive-android-development-portfolio-2g8e</link>
+      <guid>https://dev.to/javeedishaq/strategic-plan-to-build-an-impressive-android-development-portfolio-2g8e</guid>
+      <pubDate>Thu, 19 Dec 2024 03:28:27 GMT</pubDate>
+      <description>Creating a portfolio that effectively showcases your Android development skills is key to landing...</description>
+      <category>Mobile</category>
+    </item>
+    <item>
+      <title>Navigating the Path to Machine Learning and On-Device AI</title>
+      <link>https://dev.to/javeedishaq/navigating-the-path-to-machine-learning-and-on-device-ai-3okg</link>
+      <guid>https://dev.to/javeedishaq/navigating-the-path-to-machine-learning-and-on-device-ai-3okg</guid>
+      <pubDate>Tue, 17 Dec 2024 15:37:19 GMT</pubDate>
+      <description>Machine learning and artificial intelligence on mobile devices</description>
+      <category>AI</category>
+    </item>
+    <item>
+      <title>If I Am Starting Over My Learning as a Developer: A Comprehensive Roadmap to Success</title>
+      <link>https://dev.to/javeedishaq/if-i-am-starting-over-my-learning-as-a-developer-a-comprehensive-roadmap-to-success-jj</link>
+      <guid>https://dev.to/javeedishaq/if-i-am-starting-over-my-learning-as-a-developer-a-comprehensive-roadmap-to-success-jj</guid>
+      <pubDate>Mon, 16 Dec 2024 10:42:06 GMT</pubDate>
+      <description>Embarking on a journey to become a skilled developer is both exciting and challenging. Drawing from...</description>
+      <category>Career</category>
+    </item>
+    <item>
+      <title>Hosting Options for a Full-Stack Project with Spring Boot, PostgreSQL, and Angular</title>
+      <link>https://dev.to/javeedishaq/hosting-options-for-a-full-stack-project-with-spring-boot-postgresql-and-angular-5bj0</link>
+      <guid>https://dev.to/javeedishaq/hosting-options-for-a-full-stack-project-with-spring-boot-postgresql-and-angular-5bj0</guid>
+      <pubDate>Sat, 14 Dec 2024 17:38:29 GMT</pubDate>
+      <description>If you’ve developed a full-stack project using Spring Boot, PostgreSQL, and Angular, finding the...</description>
+      <category>Backend</category>
+    </item>
+    <item>
+      <title>Resolving Java and Gradle Compatibility Issues in Flutter Projects</title>
+      <link>https://dev.to/javeedishaq/resolving-java-and-gradle-compatibility-issues-in-flutter-projects-3jfg</link>
+      <guid>https://dev.to/javeedishaq/resolving-java-and-gradle-compatibility-issues-in-flutter-projects-3jfg</guid>
+      <pubDate>Fri, 13 Dec 2024 08:27:28 GMT</pubDate>
+      <description>When creating a new Flutter app, you might encounter compatibility issues between the Java...</description>
+      <category>Flutter</category>
+    </item>
+  </channel>
+</rss>
