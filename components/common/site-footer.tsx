@@ -20,7 +20,7 @@ export function SiteFooter() {
         <div className="flex max-w-sm flex-col gap-3">
           <Logo />
           <p className="text-sm text-muted-foreground">
-            Full-stack product engineer — Flutter, Next.js, NestJS and AI.
+            Full-stack AI engineer — RAG, TypeScript, Next.js and Flutter.
             Based in Sahiwal, Pakistan, working remotely worldwide.
           </p>
           <p className="text-sm text-muted-foreground">

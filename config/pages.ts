@@ -18,7 +18,7 @@ export const pagesConfig: PagesConfig = {
     description: "Welcome to my portfolio website.",
     metadata: {
       title: "Home",
-      description: "Javeed Ishaq — Product Engineer. I build mobile and web products end-to-end with Flutter, Next.js, NestJS, and AI.",
+      description: "Javeed Ishaq — Full-Stack AI Engineer. I ship LLM features to production: RAG on pgvector, AI document verification, guardrailed structured output and image generation.",
     },
   },
   skills: {
@@ -27,7 +27,7 @@ export const pagesConfig: PagesConfig = {
     metadata: {
       title: "Tech Stack",
       description:
-        "The tools Javeed Ishaq uses in production: Flutter, Dart, Next.js, React, NestJS, Node.js, PostgreSQL, Supabase, OpenAI, RAG and pgvector.",
+        "The tools Javeed Ishaq uses in production: OpenAI and Gemini APIs, RAG, pgvector, TypeScript, NestJS, Supabase Edge Functions, PostgreSQL, Next.js, React and Flutter.",
     },
   },
   projects: {
@@ -35,15 +35,15 @@ export const pagesConfig: PagesConfig = {
     description: "Showcasing impactful products and technical achievements.",
     metadata: {
       title: "Work & Case Studies",
-      description: "Products shipped by Javeed Ishaq: HuntKit (a RAG job coach), Leafwell (AI plant care) and Flutter apps used by thousands of real users.",
+      description: "AI products shipped by Javeed Ishaq: HuntKit (a RAG job coach), plantUSA (RAG plant identification, ~8 s → ~300 ms), NurseLife AI document verification and CarPool guardrailed AI lookup.",
     },
   },
   contact: {
     title: "Contact",
     description: "Let's connect and explore collaborations.",
     metadata: {
-      title: "Contact — Hire a Full-Stack Product Engineer",
-      description: "Contact Javeed Ishaq for remote full-stack, Flutter or AI product-engineering work. Book a call or send an email.",
+      title: "Contact — Hire a Full-Stack AI Engineer",
+      description: "Contact Javeed Ishaq for remote full-stack AI engineering work: LLM features, RAG, TypeScript backends and Flutter apps. Book a call or send an email.",
     },
   },
   contributions: {

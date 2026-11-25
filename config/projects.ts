@@ -129,7 +129,7 @@ export const Projects: ProjectInterface[] = [
   LIMIT \${limit}
 \`;`,
       },
-      next: { label: "Leafwell — AI plant care", href: "/projects/ai-plant-care" },
+      next: { label: "plantUSA — RAG plant identifier", href: "/projects/plantusa" },
     },
     pagesInfoArr: [
       {
@@ -154,139 +154,143 @@ export const Projects: ProjectInterface[] = [
     },
   },
   {
-    id: "ai-plant-care",
-    companyName: "Leafwell — AI Plant Care",
-    type: "Personal",
-    category: ["Mobile Dev", "Full Stack", "AI/ML", "Web Dev"],
+    id: "plantusa",
+    companyName: "plantUSA — AI Plant Identifier",
+    type: "Professional",
+    category: ["Mobile Dev", "AI/ML", "Full Stack"],
     shortDescription:
-      "Full-lifecycle plant-care product: Flutter mobile app, NestJS + PostgreSQL backend, Next.js admin, and practical AI for diagnosis, care recommendations, and follow-up workflows.",
-    websiteLink: "https://javeedishaq.com",
-    techStack: [
-      "Flutter",
-      "Next.js",
-      "Typescript",
-      "Nest.js",
-      "PostgreSQL",
-      "Supabase",
-      "OpenAI",
-    ],
-    startDate: new Date("2024-01-01"),
-    endDate: new Date("2024-12-01"),
-    companyLogoImg: "/projects/ai-plant/logo.jpg",
-    pagesInfoArr: [
-      {
-        title: "Mobile App",
-        description:
-          "Flutter app with plant diagnosis, care recommendations, and diagnosis history.",
-        imgArr: ["/logo.jpg"],
+      "Live on the App Store and Google Play: snap a plant photo and get species details and a disease diagnosis. I built a RAG detection path on Gemini embeddings and pgvector that cut identification from ~8 s to ~300 ms.",
+    websiteLink: "https://theplantusa.com",
+    techStack: ["Flutter", "Gemini", "pgvector", "Supabase", "PostgreSQL", "Dart"],
+    startDate: new Date("2025-01-01"),
+    endDate: new Date("2026-06-01"),
+    companyLogoImg: "/projects/plantusa/cover.png",
+    caseStudy: {
+      headline: "plantUSA: plant identification in ~300 ms instead of ~8 s.",
+      intro:
+        "Sending every photo to a large vision model was slow and expensive. I moved identification onto a retrieval path: a short Gemini description, a vector search over our own plant catalog, and a quick verification step.",
+      status: "LIVE · App Store & Google Play",
+      meta: [
+        { label: "Role", value: "Freelance AI engineer — mobile, data, AI pipeline" },
+        { label: "Result", value: "~8 s → ~300 ms identification" },
+        { label: "Stack", value: "Flutter · Supabase · pgvector · Gemini" },
+      ],
+      problem: {
+        title: "Full-model detection took ~8 seconds per photo — too slow for a camera app.",
+        body: "Users point the camera at a plant and expect an answer right away. The original flow asked a vision model to produce the full plant profile from scratch every time: slow, costly per call, and free to describe plants that are not in our catalog.",
       },
-      {
-        title: "Admin Panel",
-        description:
-          "Next.js admin dashboard for managing plant data, diagnoses, and care workflows.",
-        imgArr: ["/logo.jpg"],
+      architecture: {
+        title: "Describe, embed, retrieve, verify — then read from our own database.",
+        flow: [
+          { name: "Flutter app", note: "compress to 512px" },
+          { name: "Gemini", note: "name + embedding", highlight: true },
+          { name: "Supabase Postgres", note: "pgvector · match_plants" },
+        ],
+        pipelines: [
+          {
+            label: "DETECT",
+            text: "Photo → Gemini returns common + scientific name → gemini-embedding-001 (768-dim) → match_plants top-5 by cosine distance → Gemini picks the best of the 5 → full record from the plants table",
+          },
+          {
+            label: "BACKFILL",
+            text: "Admin tool embeds every catalog plant and disease and stores vectors in Postgres; match_diseases serves the diagnosis side",
+          },
+        ],
       },
-      {
-        title: "AI Backend",
-        description:
-          "NestJS backend with OpenAI integration for diagnosis support and recommendations.",
-        imgArr: ["/logo.jpg"],
+      decisions: [
+        {
+          title: "Retrieve from our catalog instead of generating answers",
+          why: "Results always come from curated plant records, so the app never shows a species we have no care data for.",
+        },
+        {
+          title: "Verify against 5 candidates, not 1",
+          why: "The nearest vector is not always right. A short second Gemini call picks from the top 5 by number, which is cheap and fixes most near-misses.",
+        },
+        {
+          title: "Strict timeouts and a fallback path",
+          why: "Each step has a timeout. If the RAG path fails or the catalog is not embedded yet, the app falls back to full model detection instead of showing an error.",
+        },
+        {
+          title: "Strict JSON for diagnosis",
+          why: "Health status, disease name and confidence level come back as structured JSON, so the Flutter UI renders them without parsing free text.",
+        },
+      ],
+      code: {
+        file: "match_plants.sql",
+        snippet: `CREATE OR REPLACE FUNCTION public.match_plants(
+  query_embedding vector(768),
+  match_count integer DEFAULT 5
+) RETURNS TABLE (id uuid, common_name text, similarity double precision)
+LANGUAGE sql STABLE AS $$
+  SELECT id, common_name,
+         1 - (embedding <=> query_embedding) AS similarity
+  FROM public.plants
+  WHERE embedding IS NOT NULL
+  ORDER BY embedding <=> query_embedding
+  LIMIT match_count;
+$$;`,
       },
-    ],
+      next: { label: "HuntKit — RAG job coach", href: "/projects/huntkit" },
+    },
+    pagesInfoArr: [],
     descriptionDetails: {
       paragraphs: [
-        "Built a plant-care product with a Flutter mobile app, Next.js admin panel, and NestJS backend. The app features AI-powered plant diagnosis, care recommendations, and follow-up workflows.",
-        "Integrated OpenAI APIs for diagnosis support, structured outputs for care recommendations, and PostgreSQL with Supabase for data persistence and real-time sync.",
+        "plantUSA is a Flutter + Supabase app, live on the App Store and Google Play, that turns a plant photo into species details and a disease diagnosis.",
       ],
       bullets: [
-        "Built a cross-platform Flutter app with plant diagnosis and care history.",
-        "Created a Next.js admin panel for managing plant data and care workflows.",
-        "Developed a NestJS backend with OpenAI integration for AI-powered recommendations.",
-        "Used PostgreSQL and Supabase for data persistence and real-time sync.",
+        "RAG detection path on Gemini embeddings and pgvector: ~8 s → ~300 ms.",
+        "Strict JSON diagnosis: health status, disease name, confidence level.",
+        "Admin tool to backfill catalog embeddings.",
       ],
     },
   },
   {
     id: "nurselife",
-    companyName: "NurseLife",
+    companyName: "NurseLife — AI Document Verification",
     type: "Professional",
-    category: ["Mobile Dev", "Full Stack"],
+    category: ["AI/ML", "Backend", "Full Stack"],
     shortDescription:
-      "Healthcare-adjacent mobile product with backend-connected features and operational system improvements.",
-    techStack: [
-      "Flutter",
-      "Supabase",
-      "PostgreSQL",
-      "Dart",
-    ],
-    startDate: new Date("2023-06-01"),
-    endDate: new Date("2023-12-01"),
+      "Healthcare staffing platform at Crunch Africa. I built AI verification of nurse certifications with Gemini, strict JSON validation, a human-in-the-loop review flow and per-call AI logging.",
+    techStack: ["Gemini", "Supabase", "Typescript", "PostgreSQL", "Flutter"],
+    startDate: new Date("2024-12-01"),
+    endDate: new Date("2026-11-01"),
     companyLogoImg: "/projects/nurselife/logo.png",
-    pagesInfoArr: [
-      {
-        title: "Mobile App",
-        description:
-          "Flutter app with healthcare workflows, scheduling, and operational features.",
-        imgArr: ["/logo.png"],
-      },
-      {
-        title: "Backend",
-        description:
-          "Supabase backend with PostgreSQL for data management and real-time features.",
-        imgArr: ["/logo.png"],
-      },
-    ],
+    pagesInfoArr: [],
     descriptionDetails: {
       paragraphs: [
-        "Delivered mobile product workflows and backend-connected features for a healthcare-adjacent application. Improved reliability and usability for production workflows.",
-        "Used Flutter for cross-platform mobile delivery and Supabase with PostgreSQL for backend data flows and real-time features.",
+        "NurseLife staff upload certifications and documents that admins must check before a nurse can work. I built an AI step that does the first pass, while keeping the final decision with a person.",
+        "A Supabase Edge Function (TypeScript/Deno) sends each uploaded document to Gemini and validates a strict JSON result: extracted fields, readability, a 0–1 confidence score, issues and a draft approve/reject note. Work runs through a cron-drained job queue.",
       ],
       bullets: [
-        "Built a Flutter mobile app with healthcare workflows and scheduling.",
-        "Improved reliability and usability for production healthcare-adjacent workflows.",
-        "Used Supabase and PostgreSQL for backend data flows and real-time sync.",
+        "The AI never approves or rejects. Admins accept, edit or dismiss each suggestion, and every action is stored as a quality signal.",
+        "The manual review path keeps working if the AI fails.",
+        "Every AI call is logged (model, prompt/completion tokens, latency, status) and shown in an admin AI Runs dashboard.",
+        "Wrote a cost report estimating document-verification AI spend at current volume.",
       ],
     },
   },
   {
     id: "carpool",
-    companyName: "CarPool",
+    companyName: "CarPool — Guardrailed AI Vehicle Lookup",
     type: "Professional",
-    category: ["Mobile Dev", "Full Stack"],
+    category: ["AI/ML", "Backend", "Mobile Dev"],
     shortDescription:
-      "Mobile carpooling app with real-time backend connectivity and operational workflows.",
-    techStack: [
-      "Flutter",
-      "REST APIs",
-      "Node.js",
-      "Dart",
-    ],
-    startDate: new Date("2022-01-01"),
-    endDate: new Date("2022-12-01"),
+      "Carpooling app at Crunch Africa. I built and hardened a Gemini feature in the Spring Boot API that returns car configurations as structured JSON, behind input validation, rate limits and plausibility checks.",
+    techStack: ["Gemini", "Spring Boot", "Java", "Flutter", "AWS"],
+    startDate: new Date("2020-03-01"),
+    endDate: new Date("2026-11-01"),
     companyLogoImg: "/projects/carpool/logo.jpg",
-    pagesInfoArr: [
-      {
-        title: "Mobile App",
-        description:
-          "Flutter app with ride matching, real-time tracking, and booking workflows.",
-        imgArr: ["/logo.jpg"],
-      },
-      {
-        title: "Backend",
-        description:
-          "REST API backend for ride matching, real-time updates, and operational data.",
-        imgArr: ["/logo.jpg"],
-      },
-    ],
+    pagesInfoArr: [],
     descriptionDetails: {
       paragraphs: [
-        "Built and shipped mobile features connected to live backend and operational workflows. Contributed to real-time product behavior and delivery-focused system improvements.",
-        "The app enables ride matching, real-time tracking, and seamless booking workflows for carpooling users.",
+        "CarPool calculates ride credits from vehicle data, so a wrong CO₂ figure has a real cost. I built the AI vehicle lookup to be useful without being trusted blindly.",
+        "Earlier, as Senior Apps Developer, I built CarPool's real-time tracking and live sync in Flutter.",
       ],
       bullets: [
-        "Built a Flutter app with ride matching and real-time tracking.",
-        "Connected to live backend for real-time product behavior.",
-        "Improved delivery-focused system workflows.",
+        "Gemini returns car configurations as structured JSON.",
+        "Input validation against prompt injection and per-user rate limits.",
+        "AI-generated rows are stored as unverified with a source tag; a plausibility range stops a made-up CO₂ figure from driving ride credits.",
+        "Production hardening: admin-only AI endpoints, rate limits behind CloudFront, nightly and pre-deploy database backups to S3, Google Play submission.",
       ],
     },
   },
@@ -394,7 +398,7 @@ export const Projects: ProjectInterface[] = [
     type: "Professional",
     category: ["Mobile Dev", "Full Stack", "UI/UX"],
     shortDescription:
-      "Rental platform mobile app with booking management, payments, and live availability — improved engagement by 30%.",
+      "Rental platform mobile app with booking management, payments, and live availability.",
     techStack: [
       "Flutter",
       "REST APIs",
@@ -426,13 +430,12 @@ export const Projects: ProjectInterface[] = [
     ],
     descriptionDetails: {
       paragraphs: [
-        "Built a rental platform mobile app with booking management, payment integration, and live availability workflows. Improved user engagement by 30% through a more complete booking experience.",
+        "Built a rental platform mobile app with booking management, payment integration, and live availability workflows.",
         "The app features real-time rental availability, seamless booking, and secure payment processing for a complete rental experience.",
       ],
       bullets: [
         "Built a rental platform app with booking management and live availability.",
         "Integrated payment gateways for secure rental transactions.",
-        "Improved user engagement by 30% with a complete booking experience.",
         "Added real-time rental availability for better user experience.",
       ],
     },

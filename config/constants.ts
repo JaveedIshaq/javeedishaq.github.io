@@ -59,6 +59,8 @@ export type ValidSkills =
   | "Riverpod"
   | "REST APIs"
   | "OpenAI"
+  | "Gemini"
+  | "pgvector"
   | "Jira"
   | "ClickUp"
   | "Clean Architecture"

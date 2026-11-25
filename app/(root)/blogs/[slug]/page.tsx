@@ -151,7 +151,7 @@ export default async function PostPage({ params }: PostPageProps) {
             <div className="flex min-w-0 flex-[1_1_300px] flex-col gap-1 text-[15px]">
               <span className="font-heading text-lg font-semibold">{siteConfig.authorName}</span>
               <span className="text-[#AEB7C4]">
-                Full-stack product engineer — Flutter, Next.js, NestJS and AI. I write about what I
+                Full-stack AI engineer — RAG, TypeScript, Next.js and Flutter. I write about what I
                 learn while shipping.
               </span>
               <span className="flex flex-wrap gap-4">

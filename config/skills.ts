@@ -1,115 +1,87 @@
 import { Icons } from "@/components/common/icons";
 
+// Mirrors the TECHNICAL SKILLS section of the resume, in priority order.
+// No self-ratings: each description says where the skill was used in production.
 export interface skillsInterface {
   name: string;
   description: string;
-  rating: number;
   icon: any;
 }
 
-export const skillsUnsorted: skillsInterface[] = [
+export const skills: skillsInterface[] = [
   {
-    name: "Flutter",
+    name: "OpenAI API",
     description:
-      "Build beautiful, natively compiled cross-platform mobile apps from a single codebase.",
-    rating: 5,
-    icon: Icons.flutter,
+      "HuntKit: text-embedding-3-small for ingestion and gpt-4o-mini structured output with citations to retrieved chunks.",
+    icon: Icons.openai,
+  },
+  {
+    name: "Gemini API",
+    description:
+      "Text, vision and image generation in production: plantUSA RAG, NurseLife document verification, CarPool lookup, room visualiser.",
+    icon: Icons.gemini,
+  },
+  {
+    name: "PostgreSQL + pgvector",
+    description:
+      "Cosine-similarity search over embeddings next to app data: catalog matching in plantUSA, resume retrieval in HuntKit.",
+    icon: Icons.postgresql,
+  },
+  {
+    name: "Supabase",
+    description:
+      "Postgres, Edge Functions (Deno), auth and storage behind plantUSA, NurseLife and Kridaz.",
+    icon: Icons.supabase,
+  },
+  {
+    name: "TypeScript",
+    description:
+      "Edge Functions, NestJS APIs and Next.js dashboards — the main language across my backend and web work.",
+    icon: Icons.typescript,
+  },
+  {
+    name: "NestJS",
+    description:
+      "HuntKit API: JWT auth, profile ingestion, jobs pipeline, analysis and admin modules in a Turborepo monorepo.",
+    icon: Icons.nestjs,
+  },
+  {
+    name: "Node.js",
+    description: "Server runtime for REST APIs, background jobs and webhooks.",
+    icon: Icons.nodejs,
+  },
+  {
+    name: "Prisma",
+    description: "Typed data layer for HuntKit, with raw SQL for pgvector similarity queries.",
+    icon: Icons.prisma,
   },
   {
     name: "Next.js",
     description:
-      "Effortlessly build dynamic apps with routing, layouts, loading UI, and API routes.",
-    rating: 5,
+      "Admin panels, AI-run dashboards, HuntKit's web app and the room visualiser's public QR web app.",
     icon: Icons.nextjs,
   },
   {
-    name: "Nest.js",
-    description:
-      "Create scalable and modular applications with a progressive Node.js framework.",
-    rating: 5,
-    icon: Icons.nestjs,
-  },
-  {
-    name: "PostgreSQL",
-    description:
-      "Powerful, open-source relational database for robust data-driven applications.",
-    rating: 5,
-    icon: Icons.postgresql,
-  },
-  {
     name: "React",
-    description:
-      "Craft interactive user interfaces using components, state, props, and virtual DOM.",
-    rating: 5,
+    description: "Component-driven UIs for dashboards and customer-facing web apps.",
     icon: Icons.react,
   },
   {
-    name: "Typescript",
+    name: "Flutter",
     description:
-      "Enhance JavaScript with static types, making code more understandable and reliable.",
-    rating: 5,
-    icon: Icons.typescript,
-  },
-  {
-    name: "Node.js",
-    description:
-      "Run JavaScript on the server side, enabling dynamic and responsive applications.",
-    rating: 4,
-    icon: Icons.nodejs,
-  },
-  {
-    name: "Tailwind CSS",
-    description:
-      "Design beautiful, modern websites faster with a utility-first CSS framework.",
-    rating: 4,
-    icon: Icons.tailwindcss,
+      "8+ years shipping cross-platform apps, including plantUSA on the App Store and Google Play and a 10k+ user, 4.8★ app.",
+    icon: Icons.flutter,
   },
   {
     name: "Dart",
-    description:
-      "Optimized language for building fast apps on any platform, powering Flutter.",
-    rating: 4,
+    description: "BLoC and Riverpod state management; 7,275+ Stack Overflow reputation answering Dart and Flutter questions.",
     icon: Icons.dart,
   },
   {
-    name: "GraphQL",
-    description:
-      "Fetch data precisely with a powerful query language for APIs and runtime execution.",
-    rating: 3,
-    icon: Icons.graphql,
-  },
-  {
-    name: "Docker",
-    description:
-      "Containerize applications for consistent deployment across environments.",
-    rating: 3,
-    icon: Icons.docker,
-  },
-  {
-    name: "AWS",
-    description:
-      "Utilize Amazon Web Services to build and deploy scalable, reliable, and secure applications.",
-    rating: 3,
-    icon: Icons.amazonaws,
-  },
-  {
-    name: "Firebase",
-    description:
-      "Build and run successful apps with Google's mobile platform backend services.",
-    rating: 3,
-    icon: Icons.firebase,
-  },
-  {
     name: "Git",
-    description:
-      "Track changes and collaborate efficiently with distributed version control.",
-    rating: 4,
+    description: "GitHub workflows, Turborepo + pnpm monorepos, deploys to Netlify and Render.",
     icon: Icons.git,
   },
 ];
-
-export const skills = skillsUnsorted
-  .slice()
-  .sort((a, b) => b.rating - a.rating);
 
 export const featuredSkills = skills.slice(0, 6);

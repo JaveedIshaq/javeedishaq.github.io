@@ -6,7 +6,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "Javeed Ishaq Portfolio",
     short_name: "Javeed Ishaq",
-    description: "Javeed Ishaq - Product Engineer | Flutter · Next.js · NestJS · PostgreSQL · AI",
+    description: "Javeed Ishaq - Full-Stack AI Engineer | RAG · pgvector · TypeScript · Next.js · Flutter",
     start_url: "/",
     display: "standalone",
     background_color: "#000",

@@ -8,20 +8,21 @@ import { AnimatedSection } from "@/components/common/animated-section";
 import { PostCard } from "@/components/blog/post-card";
 import { Chip, SectionHeading } from "@/components/site/section-heading";
 import { experiences } from "@/config/experience";
-import { clientApps, community, heroStats, pipeline, skillGroups } from "@/config/home";
+import { aiFeatures, clientApps, community, heroStats, pipeline, skillGroups } from "@/config/home";
 import { pagesConfig } from "@/config/pages";
 import { siteConfig } from "@/config/site";
 import { getAllPosts } from "@/lib/blog";
 import profileImg from "@/public/mydp.jpeg";
-import leafwellImg from "@/public/projects/ai-plant/logo.jpg";
 import huntkitImg from "@/public/projects/huntkit/screenshot.png";
+import plantusaAppImg from "@/public/projects/plantusa/app-home.jpeg";
+import plantusaCoverImg from "@/public/projects/plantusa/cover.png";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "Javeed Ishaq — Full-Stack Product Engineer (Flutter, Next.js, NestJS & AI)",
+    absolute: "Javeed Ishaq — Full-Stack AI Engineer (RAG, pgvector, TypeScript, Flutter)",
   },
   description:
-    "Javeed Ishaq — full-stack product engineer. I ship complete mobile and web products end-to-end with Flutter, Next.js, NestJS, PostgreSQL and practical AI (RAG, pgvector, OpenAI).",
+    "Javeed Ishaq — full-stack AI engineer with 8+ years shipping production products. Four LLM features live in production (RAG on pgvector, AI document verification, guardrailed structured output, image generation) plus HuntKit, a RAG app built solo.",
   alternates: {
     canonical: "/",
   },
@@ -73,7 +74,7 @@ export default async function IndexPage() {
         name: siteConfig.authorName,
         url: siteConfig.url,
         image: `${siteConfig.url}/mydp.jpeg`,
-        jobTitle: "Full-Stack Product Engineer",
+        jobTitle: "Full-Stack AI Engineer",
         description: siteConfig.description,
         email: `mailto:${siteConfig.email}`,
         address: {
@@ -84,8 +85,9 @@ export default async function IndexPage() {
         },
         worksFor: { "@id": `${siteConfig.company.url}/#organization` },
         knowsAbout: [
-          "Flutter", "Dart", "Next.js", "React", "NestJS", "Node.js", "TypeScript",
-          "PostgreSQL", "Supabase", "RAG", "pgvector", "OpenAI API", "Mobile app development",
+          "LLM applications", "RAG", "pgvector", "Embeddings", "OpenAI API", "Gemini API",
+          "TypeScript", "NestJS", "Node.js", "Next.js", "React", "PostgreSQL", "Supabase",
+          "Flutter", "Dart",
         ],
         sameAs: [
           siteConfig.links.github,
@@ -117,16 +119,17 @@ export default async function IndexPage() {
             </div>
           )}
           <h1 className="font-heading text-[40px] font-bold leading-[1.04] tracking-[-0.02em] sm:text-[56px] lg:text-[68px]">
-            I ship complete products — from Postgres schema to the App Store.
+            I ship AI features real users rely on — from pgvector to the App Store.
           </h1>
           <p className="max-w-[560px] text-lg text-[#AEB7C4] sm:text-[19px]">
-            Full-stack product engineer with 8+ years of Flutter depth and modern TypeScript
-            delivery. I build the API, the admin panel, the mobile app and the AI feature — and
-            own the outcome, not the ticket.
+            Full-stack AI engineer with 8+ years of shipping production products. Four LLM
+            features live in production — RAG search, AI document verification with human
+            review, guardrailed structured output and image generation — built across the
+            database, API, admin panel and mobile app.
           </p>
           <div className="flex flex-wrap gap-3">
-            <Link href="#work" className={btnPrimary}>
-              See shipped work <ArrowRight className="h-[18px] w-[18px]" aria-hidden="true" />
+            <Link href="#ai" className={btnPrimary}>
+              See AI in production <ArrowRight className="h-[18px] w-[18px]" aria-hidden="true" />
             </Link>
             <a href={siteConfig.resume} target="_blank" rel="noreferrer" className={btnOutline}>
               <Download className="h-[18px] w-[18px]" aria-hidden="true" /> Download resume (PDF)
@@ -182,18 +185,22 @@ export default async function IndexPage() {
             </div>
           </div>
           <div className="absolute right-0 top-[150px] flex h-[400px] w-[210px] flex-col overflow-hidden rounded-[34px] border-8 border-[#1C222C] bg-[#0D1117] shadow-[0_30px_60px_rgba(0,0,0,0.55)]">
-            <Image src={leafwellImg} alt="" className="block h-[190px] w-full object-cover" />
+            <Image
+              src={plantusaAppImg}
+              alt=""
+              className="block h-[230px] w-full object-cover object-top"
+            />
             <div className="flex flex-col gap-2 p-3">
-              <div className="font-heading text-sm font-semibold">Leafwell · Diagnosis</div>
+              <div className="font-heading text-sm font-semibold">plantUSA · RAG identify</div>
               <div className="text-[11.5px] leading-[1.45] text-[#AEB7C4]">
-                Likely early leaf spot. Remove affected leaves and water at the base.
+                Photo → embedding → pgvector top-5 → verified match in ~300 ms.
               </div>
               <div className="flex flex-wrap gap-1.5">
                 <span className="rounded-full border border-[#1F3B38] px-2 py-0.5 text-[10.5px] text-[#A7F3E4]">
                   Flutter
                 </span>
                 <span className="rounded-full border border-input px-2 py-0.5 text-[10.5px] text-[#AEB7C4]">
-                  OpenAI
+                  Gemini
                 </span>
               </div>
             </div>
@@ -226,10 +233,51 @@ export default async function IndexPage() {
         </ol>
       </section>
 
+      {/* AI IN PRODUCTION */}
+      <AnimatedSection direction="up" className="flex flex-col gap-8 pb-4 pt-24" id="ai">
+        <SectionHeading
+          eyebrow="01 / AI in production"
+          title="Four LLM features real users rely on."
+          id="ai-h"
+        />
+        <p className="max-w-[720px] text-[17px] text-[#AEB7C4]">
+          Not demos. Each one ships with the boring parts that make AI safe to run: strict JSON
+          validation, fallbacks, rate limits, human review and logging of every model call.
+        </p>
+        <div className="grid gap-5 md:grid-cols-2">
+          {aiFeatures.map((f) => {
+            const body = (
+              <>
+                <div className="flex flex-wrap items-center justify-between gap-2">
+                  <span className="text-[13px] text-muted-foreground">{f.where}</span>
+                  <span className="rounded-full border border-[#1F3B38] bg-[#0E1A1A] px-2.5 py-0.5 font-mono text-xs text-[#A7F3E4]">
+                    {f.result}
+                  </span>
+                </div>
+                <h3 className="font-heading text-[22px] font-semibold">{f.name}</h3>
+                <p className="text-[15px] leading-[1.6] text-[#AEB7C4]">{f.text}</p>
+                <span className="mt-auto font-mono text-xs text-muted-foreground">{f.stack}</span>
+              </>
+            );
+            const cls =
+              "flex flex-col gap-3 rounded-[20px] border border-border bg-card p-7 transition-colors";
+            return f.href ? (
+              <Link key={f.name} href={f.href} className={`${cls} hover:border-[#3A4454]`}>
+                {body}
+              </Link>
+            ) : (
+              <div key={f.name} className={cls}>
+                {body}
+              </div>
+            );
+          })}
+        </div>
+      </AnimatedSection>
+
       {/* SELECTED WORK */}
       <AnimatedSection direction="up" className="flex flex-col gap-8 pb-10 pt-24" id="work">
         <div className="flex flex-wrap items-end justify-between gap-4">
-          <SectionHeading eyebrow="01 / Selected work" title="Products, not just screens." id="work-h" />
+          <SectionHeading eyebrow="02 / Selected work" title="Case studies you can verify." id="work-h" />
           <Link href="/projects" className="text-[15px] text-primary">
             All projects →
           </Link>
@@ -297,28 +345,38 @@ export default async function IndexPage() {
 
         <div className="grid gap-6 md:grid-cols-2">
           <Link
-            href="/projects/ai-plant-care"
+            href="/projects/plantusa"
             className="flex flex-col overflow-hidden rounded-[20px] border border-border bg-card transition-colors hover:border-[#3A4454]"
           >
             <Image
-              src={leafwellImg}
-              alt="Leafwell app scanning a plant"
+              src={plantusaCoverImg}
+              alt="plantUSA app: identify and care for US plants instantly"
               className="block h-60 w-full object-cover"
             />
             <div className="flex flex-col gap-3 p-7">
-              <span className="text-[13px] text-muted-foreground">Mobile + AI · Portfolio product</span>
-              <h3 className="font-heading text-[26px] font-semibold">Leafwell — AI plant care</h3>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="rounded-full bg-primary px-2.5 py-0.5 text-xs font-semibold text-primary-foreground">
+                  LIVE
+                </span>
+                <span className="text-[13px] text-muted-foreground">
+                  App Store &amp; Google Play · Freelance
+                </span>
+              </div>
+              <h3 className="font-heading text-[26px] font-semibold">
+                plantUSA — RAG plant identification
+              </h3>
               <p className="text-[#AEB7C4]">
-                Flutter app, NestJS + PostgreSQL backend and Next.js admin, with diagnosis, care
-                plans and follow-ups powered by pgvector search and OpenAI structured outputs.
+                Moved identification from a full vision-model call to retrieval over our own
+                catalog: Gemini embeddings, pgvector top-5 and a verification step. ~8 s → ~300 ms,
+                with fallback to full detection.
               </p>
               <span className="font-mono text-xs text-muted-foreground">
-                Flutter · NestJS · Supabase · OpenAI
+                Flutter · Supabase · pgvector · Gemini
               </span>
             </div>
           </Link>
           <div className="flex flex-col gap-4 rounded-[20px] border border-border bg-card p-7">
-            <span className="text-[13px] text-muted-foreground">Client &amp; production apps</span>
+            <span className="text-[13px] text-muted-foreground">Earlier production mobile apps</span>
             <h3 className="font-heading text-[26px] font-semibold">Shipped for real users</h3>
             <ul className="flex flex-col">
               {clientApps.map((app) => (
@@ -341,7 +399,7 @@ export default async function IndexPage() {
       <AnimatedSection direction="up" className="flex flex-wrap gap-12 pb-10 pt-20" id="experience">
         <div className="flex min-w-0 flex-[1_1_300px] flex-col gap-3">
           <SectionHeading
-            eyebrow="02 / Experience"
+            eyebrow="03 / Experience"
             title="Remote since 2020, across three continents."
             id="exp-h"
           />
@@ -395,7 +453,7 @@ export default async function IndexPage() {
 
       {/* STACK */}
       <AnimatedSection direction="up" className="flex flex-col gap-7 pb-10 pt-20" id="stack">
-        <SectionHeading eyebrow="03 / Stack" title="Tools I reach for in production." />
+        <SectionHeading eyebrow="04 / Stack" title="Tools I reach for in production." />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {skillGroups.map((g) => (
             <div
@@ -413,7 +471,7 @@ export default async function IndexPage() {
       {posts.length > 0 && (
         <AnimatedSection direction="up" className="flex flex-col gap-7 pb-10 pt-20" id="writing">
           <div className="flex flex-wrap items-end justify-between gap-4">
-            <SectionHeading eyebrow="04 / Writing" title="Notes from shipping." />
+            <SectionHeading eyebrow="05 / Writing" title="Notes from shipping." />
             <Link href="/blogs" className="text-[15px] text-primary">
               All articles →
             </Link>
